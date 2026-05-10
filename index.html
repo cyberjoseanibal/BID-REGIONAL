@@ -1610,7 +1610,21 @@ footer{
   .hamburger{display:flex}
   .galeria-item.secondary{grid-column:span 6}
 }
+.hero-mobile-overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(4,17,31,0.6), rgba(4,17,31,0.8));
+  pointer-events: none;
+}
+
 @media(max-width:600px){
+  .hero-mobile-overlay { display: block; }
+  .hero-bg video { 
+    object-position: 70% center; 
+    filter: brightness(0.4) contrast(1.2);
+  }
   .hero-content{padding-bottom: 80px;}
   .hero-scroll{bottom: 15px;}
   .scroll-line{height: 30px;}
@@ -1718,10 +1732,12 @@ footer{
   <div class="hero-bg">
     <video 
       src="MULTIMEDIA/hero_bg_optimized.mp4" 
+      poster="MULTIMEDIA/video_placeholder.webp"
       autoplay loop muted playsinline preload="metadata"
       id="heroVideo">
     </video>
   </div>
+  <div class="hero-mobile-overlay"></div>
   <div class="hero-grid"></div>
   <div class="particles" id="particles"></div>
 
