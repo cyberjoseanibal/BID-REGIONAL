@@ -193,37 +193,26 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   margin-bottom: 10px;
 }
 .fp-rings{
-  position:absolute;inset:-60px;
-  width: 260px; height: 260px;
+  position:absolute;inset:-40px;
+  width: 220px; height: 220px;
   pointer-events: none;
 }
-.fp-rings .hud-ring {
+.fp-rings .aura-ring {
   fill: none;
-  stroke: rgba(191, 231, 251, 0.2);
-  stroke-width: 1.5;
-  stroke-dasharray: 10 20;
-  transform-origin: center;
-  animation: hud-rotate 10s linear infinite;
+  stroke: var(--neon);
+  stroke-width: 0.5;
+  opacity: 0.3;
+  animation: aura-pulse 4s ease-in-out infinite;
 }
-.fp-rings .hud-ring-fast {
-  stroke: rgba(0, 229, 255, 0.15);
-  stroke-dasharray: 2 10;
-  animation: hud-rotate 5s linear infinite reverse;
-}
-.fp-rings .hud-pulse {
-  fill: none;
-  stroke: rgba(191, 231, 251, 0.05);
-  stroke-width: 40;
-  animation: hud-pulse 4s ease-out infinite;
+.fp-rings .aura-glow {
+  fill: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+  opacity: 0.5;
+  animation: aura-pulse 4s ease-in-out infinite alternate;
 }
 
-@keyframes hud-rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@keyframes hud-pulse {
-  0% { transform: scale(0.6); opacity: 1; }
-  100% { transform: scale(1.4); opacity: 0; }
+@keyframes aura-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.1); opacity: 0.5; }
 }
 
 .fp-btn{
@@ -1639,12 +1628,16 @@ footer{
   <div class="intro-bg-grid"></div>
   
   <div class="fp-wrap">
-    <!-- Modern HUD rings -->
-    <svg class="fp-rings" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
-      <circle class="hud-pulse" cx="180" cy="180" r="100"/>
-      <circle class="hud-ring" cx="180" cy="180" r="110"/>
-      <circle class="hud-ring-fast" cx="180" cy="180" r="130"/>
-      <path d="M180 40 L180 60 M320 180 L300 180 M180 320 L180 300 M40 180 L60 180" stroke="rgba(0, 229, 255, 0.3)" stroke-width="2"/>
+    <!-- Minimalist Aura Effect -->
+    <svg class="fp-rings" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="auraGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="var(--neon)" stop-opacity="0.15" />
+          <stop offset="100%" stop-color="var(--neon)" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="110" cy="110" r="100" fill="url(#auraGrad)" class="aura-pulse" />
+      <circle class="aura-ring" cx="110" cy="110" r="85" />
     </svg>
     <!-- Logo button -->
     <div class="fp-btn" id="intro-fp" title="Toca para entrar" style="border-radius: 50%; overflow: hidden; border: 3px solid #BFE7FB; box-shadow: 0 0 30px rgba(191,231,251,0.3); width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; position: relative;">
@@ -1736,13 +1729,11 @@ footer{
 
   <div class="hero-content">
 
-    <!-- Hero HUD -->
+    <!-- Minimalist Hero Aura -->
     <div class="hero-fp" id="heroFp">
-      <svg class="fp-rings" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:-100px;pointer-events:none">
-        <circle class="hud-pulse" cx="200" cy="200" r="120"/>
-        <circle class="hud-ring" cx="200" cy="200" r="140"/>
-        <circle class="hud-ring-fast" cx="200" cy="200" r="160"/>
-        <path d="M200 60 L200 90 M340 200 L310 200 M200 340 L200 310 M60 200 L90 200" stroke="var(--neon)" stroke-width="2" opacity="0.4"/>
+      <svg class="fp-rings" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:-40px;pointer-events:none">
+        <circle cx="110" cy="110" r="100" fill="url(#auraGrad)" class="aura-pulse" />
+        <circle class="aura-ring" cx="110" cy="110" r="85" />
       </svg>
       <div class="hero-logo-img">
         <img src="https://i.ibb.co/mV8BCW6h/658481474-17972713256991804-2269974396034380419-n.jpg" alt="Logo BID">
