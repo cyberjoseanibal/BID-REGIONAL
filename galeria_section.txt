@@ -1,0 +1,52 @@
+<!-- ═══ GALERIA ═══ -->
+<section id="galeria">
+  <div class="galeria-header">
+    <div class="section-label">Momentos Destacados</div>
+    <h2 class="section-title reveal">Nuestra <span>Experiencia</span></h2>
+    <p class="section-desc reveal reveal-delay-1">Imágenes que capturan la esencia del liderazgo, la excelencia académica y el compromiso de nuestros jóvenes delegados.</p>
+  </div>
+  <div class="galeria-grid">
+    <!-- Featured Image -->
+    <div class="galeria-item featured reveal">
+      <img src="MULTIMEDIA/IMG_3237.webp" alt="BID Regional 12 - Liderazgo" loading="lazy">
+      <div class="galeria-counter">01</div>
+      <div class="galeria-content">
+        <div class="galeria-info">
+          <div class="galeria-title">Liderazgo en Acción</div>
+          <div class="galeria-tag">Debate Regional</div>
+        </div>
+      </div>
+    </div>
+    <!-- Secondary Images -->
+    <div class="galeria-item secondary reveal reveal-delay-1">
+      <img src="MULTIMEDIA/IMG_3157.webp" alt="BID Regional 12 - Equipo" loading="lazy">
+      <div class="galeria-counter">02</div>
+      <div class="galeria-content">
+        <div class="galeria-info">
+          <div class="galeria-title">Trabajo en Equipo</div>
+          <div class="galeria-tag">Colaboración</div>
+        </div>
+      </div>
+    </div>
+    <div class="galeria-item secondary reveal reveal-delay-2">
+      <img src="MULTIMEDIA/IMG_3306.webp" alt="BID Regional 12 - Participación" loading="lazy">
+      <div class="galeria-counter">03</div>
+      <div class="galeria-content">
+        <div class="galeria-info">
+          <div class="galeria-title">Voces Jóvenes</div>
+          <div class="galeria-tag">Participación</div>
+        </div>
+      </div>
+    </div>
+    <div class="galeria-item secondary reveal reveal-delay-3">
+      <img src="MULTIMEDIA/IMG_5363.webp" alt="BID Regional 12 - Formación" loading="lazy">
+      <div class="galeria-counter">04</div>
+      <div class="galeria-content">
+        <div class="galeria-info">
+          <div class="galeria-title">Excelencia Académica</div>
+          <div class="galeria-tag">Formación</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

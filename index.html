@@ -1554,6 +1554,168 @@ footer{
 }
 
 /* ═══════════════════════════════════════
+   SECRETARÍA GENERAL
+═══════════════════════════════════════ */
+#secretaria {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy2) 50%, var(--navy) 100%);
+  position: relative;
+  overflow: hidden;
+}
+#secretaria::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 10%, rgba(0,229,255,0.3) 50%, transparent 90%);
+}
+#secretaria::after {
+  content: '';
+  position: absolute;
+  bottom: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(21,101,192,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.secretaria-header {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 70px);
+  position: relative;
+  z-index: 1;
+}
+.secretaria-header .section-label { justify-content: center; }
+.secretaria-header .section-label::before { display: none; }
+.secretaria-header .section-desc { margin: 0 auto; }
+
+.secretaria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.secretaria-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  background: rgba(4, 17, 31, 0.5);
+  backdrop-filter: blur(12px);
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: default;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+.secretaria-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 229, 255, 0.12);
+}
+.secretaria-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.secretaria-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
+  filter: brightness(0.92) saturate(1.05);
+}
+.secretaria-card:hover .secretaria-card-img img {
+  transform: scale(1.06);
+  filter: brightness(1) saturate(1.15);
+}
+.secretaria-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(4, 17, 31, 0.9) 0%, rgba(4, 17, 31, 0.3) 35%, transparent 70%);
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+.secretaria-card:hover .secretaria-card-img::after {
+  background: linear-gradient(to top, rgba(4, 17, 31, 0.95) 0%, rgba(4, 17, 31, 0.15) 40%, transparent 75%);
+}
+.secretaria-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.secretaria-card-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+.secretaria-card-role {
+  font-family: 'Orbitron', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neon);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 100px;
+  width: fit-content;
+  backdrop-filter: blur(8px);
+}
+.secretaria-card-role::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--neon);
+  box-shadow: 0 0 6px var(--neon);
+}
+.secretaria-card-num {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: rgba(0, 229, 255, 0.07);
+  line-height: 1;
+  z-index: 2;
+  pointer-events: none;
+  transition: color 0.4s;
+}
+.secretaria-card:hover .secretaria-card-num {
+  color: rgba(0, 229, 255, 0.16);
+}
+
+/* Secretaria group card (featured full-width) */
+.secretaria-card.featured {
+  grid-column: 1 / -1;
+  max-width: 700px;
+  margin: 16px auto 0;
+}
+.secretaria-card.featured .secretaria-card-img {
+  aspect-ratio: 16/10;
+}
+
+/* ═══════════════════════════════════════
    SCROLL REVEAL
 ═══════════════════════════════════════ */
 .reveal{
@@ -1587,6 +1749,8 @@ footer{
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
   .galeria-item.secondary{grid-column:span 6}
+  .secretaria-grid{grid-template-columns:repeat(2, 1fr)}
+  .secretaria-card.featured{max-width:100%}
 }
 .hero-mobile-overlay {
   display: none;
@@ -1619,6 +1783,8 @@ footer{
   .galeria-item.secondary{grid-column:1 / -1}
   .mv-card{padding:24px 20px}
   footer{flex-direction:column;text-align:center}
+  .secretaria-grid{grid-template-columns:1fr}
+  .secretaria-card.featured{max-width:100%}
 }
 </style>
 </head>
@@ -1680,6 +1846,7 @@ footer{
   </div>
   <ul class="nav-links">
     <li><a href="#hero">Inicio</a></li>
+    <li><a href="#secretaria">Secretaría General</a></li>
     <li><a href="#propuesta">La Propuesta</a></li>
     <li><a href="#galeria">Galería</a></li>
     <li><a href="#pilares">Pilares</a></li>
@@ -1696,6 +1863,7 @@ footer{
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#hero" onclick="closeMobile()">Inicio</a>
+  <a href="#secretaria" onclick="closeMobile()">Secretaría General</a>
   <a href="#propuesta" onclick="closeMobile()">La Propuesta</a>
   <a href="#galeria" onclick="closeMobile()">Galería</a>
   <a href="#pilares" onclick="closeMobile()">Pilares</a>
@@ -1756,6 +1924,61 @@ footer{
   <div class="hero-scroll">
     <div class="scroll-line"></div>
     <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══ SECRETARÍA GENERAL ═══ -->
+<section id="secretaria">
+  <div class="secretaria-header">
+    <div class="section-label">Liderazgo & Gestión</div>
+    <h2 class="section-title reveal">Secretaría <span>General</span></h2>
+    <p class="section-desc reveal reveal-delay-1">El equipo de liderazgo que impulsa, organiza y garantiza la excelencia en cada aspecto del BID Regional 12.</p>
+  </div>
+  <div class="secretaria-grid">
+    <!-- Card 1: Secretaría General -->
+    <div class="secretaria-card reveal">
+      <div class="secretaria-card-num">01</div>
+      <div class="secretaria-card-img">
+        <img src="MULTIMEDIA/secretaria_general.webp" alt="Arleen De Oca — Secretaría General" loading="lazy">
+      </div>
+      <div class="secretaria-card-info">
+        <div class="secretaria-card-name">Arleen De Oca</div>
+        <div class="secretaria-card-role">Secretaría General</div>
+      </div>
+    </div>
+    <!-- Card 2: Secretaría General Académica -->
+    <div class="secretaria-card reveal reveal-delay-1">
+      <div class="secretaria-card-num">02</div>
+      <div class="secretaria-card-img">
+        <img src="MULTIMEDIA/secretaria_academica.webp" alt="Cesarina Santana — Secretaría General Académica" loading="lazy">
+      </div>
+      <div class="secretaria-card-info">
+        <div class="secretaria-card-name">Cesarina Santana</div>
+        <div class="secretaria-card-role">General Académica</div>
+      </div>
+    </div>
+    <!-- Card 3: Secretaría General Logística -->
+    <div class="secretaria-card reveal reveal-delay-2">
+      <div class="secretaria-card-num">03</div>
+      <div class="secretaria-card-img">
+        <img src="MULTIMEDIA/secretaria_logistica.webp" alt="Cindy Ubiera — Secretaría General Logística" loading="lazy">
+      </div>
+      <div class="secretaria-card-info">
+        <div class="secretaria-card-name">Cindy Ubiera</div>
+        <div class="secretaria-card-role">General Logística</div>
+      </div>
+    </div>
+    <!-- Card 4: Grupo Secretaría General -->
+    <div class="secretaria-card reveal reveal-delay-3">
+      <div class="secretaria-card-num">04</div>
+      <div class="secretaria-card-img">
+        <img src="MULTIMEDIA/secretaria_grupo.webp" alt="Secretaría General — Equipo Completo" loading="lazy">
+      </div>
+      <div class="secretaria-card-info">
+        <div class="secretaria-card-name">Equipo Secretaría</div>
+        <div class="secretaria-card-role">CELIDER · Regional 12</div>
+      </div>
+    </div>
   </div>
 </section>
 
