@@ -1,0 +1,54 @@
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:900px){
+  .propuesta-grid,
+  .mision-grid,
+  .regional-content{grid-template-columns:1fr}
+  .propuesta-visual{order:-1}
+  .propuesta-badge{bottom:-16px}
+  .propuesta-text{text-align: center; padding-left: 0;}
+  .propuesta-text .section-label{justify-content: center !important;}
+  .propuesta-text .section-desc{margin: 0 auto 24px;}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .galeria-item.secondary{grid-column:span 6}
+  .secretaria-grid{grid-template-columns:repeat(2, 1fr)}
+  .secretaria-card.featured{max-width:100%}
+}
+.hero-mobile-overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(4,17,31,0.6), rgba(4,17,31,0.8));
+  pointer-events: none;
+}
+
+@media(max-width:600px){
+  .intro-title{font-size: clamp(3.5rem, 15vw, 5rem) !important; letter-spacing: 0.02em;}
+  .intro-title-gold{font-size: 1.8rem !important; letter-spacing: 0.2em !important;}
+  .intro-subtitle-italic{font-size: 0.8rem !important; letter-spacing: 0.2em !important; padding: 6px 16px !important;}
+  .fp-wrap{transform: scale(0.85); margin-bottom: 0;}
+  .intro-divider{margin: 20px 0 !important;}
+  .hero-mobile-overlay { display: block; }
+  .hero-bg video { 
+    object-position: 70% center; 
+    filter: brightness(0.4) contrast(1.2);
+  }
+  .hero-content{padding-bottom: 80px;}
+  .hero-scroll{bottom: 15px;}
+  .scroll-line{height: 30px;}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .pilares-grid{grid-template-columns:1fr}
+  .equipo-grid{grid-template-columns:1fr 1fr}
+  .galeria-grid{grid-template-columns:1fr}
+  .galeria-item.featured{aspect-ratio:16/10}
+  .galeria-item.secondary{grid-column:1 / -1}
+  .mv-card{padding:24px 20px}
+  footer{flex-direction:column;text-align:center}
+  .secretaria-grid{grid-template-columns:1fr}
+  .secretaria-card.featured{max-width:100%}
+  /* Hide lateral images on small screens */
+  .hero-lateral { display: none; }
+}
