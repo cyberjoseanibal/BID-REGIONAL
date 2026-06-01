@@ -63,6 +63,15 @@ function enterSite(){
     overlay.classList.add('hidden');
     document.body.style.overflow='auto';
     if(matrixInterval) clearInterval(matrixInterval);
+    
+    // Smooth scroll to target section if hash exists in URL
+    const hash = window.location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }, 800);
 }
 
@@ -125,6 +134,11 @@ skipBtn.addEventListener('click', () => {
   skipBtn.style.pointerEvents='none';
   runScan();
 });
+// Force scroll to top on load and prevent browser auto-scroll restoration
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
 document.body.style.overflow='hidden';
 
 /* ─── HERO FP INTERACTION ─── */
