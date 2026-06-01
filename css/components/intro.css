@@ -143,75 +143,118 @@
 /* ─── FINGERPRINT (INTRO) ─── */
 .fp-wrap{
   position:relative;
-  width:160px;height:160px;
+  width:240px;height:240px;
   display:flex;align-items:center;justify-content:center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
+/* Outer rotating dashed ring (CW) */
 .fp-wrap::before {
   content: '';
   position: absolute;
-  width: 142px;
-  height: 142px;
-  border: 1px dashed rgba(0, 229, 255, 0.3);
+  width: 210px;
+  height: 210px;
+  border: 1.5px dashed rgba(0, 229, 255, 0.45);
   border-radius: 50%;
-  animation: rotate-dashed-ring 20s linear infinite;
+  animation: rotate-cw 25s linear infinite;
   pointer-events: none;
   z-index: 1;
 }
-@keyframes rotate-dashed-ring {
+/* Inner rotating double ring (CCW) */
+.fp-wrap::after {
+  content: '';
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border: 1px double rgba(0, 229, 255, 0.25);
+  border-radius: 50%;
+  animation: rotate-ccw 15s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes rotate-cw {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+@keyframes rotate-ccw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
 }
 
 .fp-btn{
   position:relative;
   z-index:2;
   cursor:pointer;
-  width: 120px; height: 120px;
+  width: 170px; height: 170px;
   border-radius: 50%;
-  border: 2px solid rgba(0, 229, 255, 0.5);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
-  transition: all 0.4s ease;
-  overflow: visible;
+  border: 2px solid rgba(0, 229, 255, 0.6);
+  box-shadow: 0 0 35px rgba(0, 229, 255, 0.25), inset 0 0 20px rgba(0, 229, 255, 0.15);
+  background: rgba(4, 17, 31, 0.6);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+/* Breathing Neon Overlay */
 .fp-btn::before {
   content: '';
   position: absolute;
-  inset: -5px;
-  border: 1px solid rgba(0, 229, 255, 0.2);
-  border-radius: 50%;
-  animation: breathing 4s ease-in-out infinite;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%);
+  animation: pulse-overlay 3s ease-in-out infinite alternate;
+  z-index: 1;
+  pointer-events: none;
 }
-@keyframes breathing {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.15); opacity: 0.1; }
+@keyframes pulse-overlay {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.8; }
 }
+/* Laser Scanning Line Sweep */
+.fp-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00E5FF, transparent);
+  box-shadow: 0 0 10px #00E5FF, 0 0 5px #00E5FF;
+  top: -10%;
+  animation: scan-loop 2.5s ease-in-out infinite;
+  z-index: 3;
+  pointer-events: none;
+}
+@keyframes scan-loop {
+  0% { top: -10%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 110%; opacity: 0; }
+}
+
 .fp-btn:hover{
-  transform:scale(1.05);
-  border-color: var(--neon);
-  box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+  transform: scale(1.03);
+  border-color: #00E5FF;
+  box-shadow: 0 0 45px rgba(0, 229, 255, 0.5), inset 0 0 30px rgba(0, 229, 255, 0.3);
 }
 .fp-btn img{
-  width:85%;height:85%;
+  width:82%;height:82%;
   object-fit:contain;
   animation: logo-pulse-glow 3s ease-in-out infinite alternate;
   transition: transform 0.4s ease, filter 0.4s ease;
+  z-index: 2;
 }
 @keyframes logo-pulse-glow {
   0% {
     transform: scale(0.95);
-    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.3)) brightness(0.9);
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.3)) brightness(0.95);
   }
   100% {
-    transform: scale(1.03);
-    filter: drop-shadow(0 0 25px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 8px rgba(0, 229, 255, 0.5)) brightness(1.15);
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 25px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 8px rgba(0, 229, 255, 0.5)) brightness(1.1);
   }
 }
 .fp-btn:hover img {
-  transform: scale(1.08) rotate(3deg);
+  transform: scale(1.05) rotate(2deg);
   filter: drop-shadow(0 0 35px rgba(0, 229, 255, 0.95)) drop-shadow(0 0 12px rgba(0, 229, 255, 0.6));
   animation-play-state: paused;
 }
