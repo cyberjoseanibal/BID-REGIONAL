@@ -583,210 +583,194 @@ nav{
   margin:4px auto;
 }
 
-/* ─── HERO SHOWCASE IMAGES ─── */
-.hero-showcase {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(24px, 5vw, 60px);
-  margin: 10px 0;
-  perspective: 1200px;
-  width: 100%;
-  max-width: 900px;
+/* ─── HERO LATERAL FLOATING IMAGES ─── */
+.hero-lateral {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  width: clamp(180px, 16vw, 260px);
+  perspective: 900px;
+  pointer-events: auto;
 }
-.hero-showcase-card {
-  position: relative;
-  width: clamp(160px, 22vw, 280px);
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 229, 255, 0.25);
-  background: rgba(4, 17, 31, 0.5);
-  backdrop-filter: blur(16px);
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(0, 229, 255, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease, border-color 0.4s;
-  cursor: pointer;
+.hero-lateral.left {
+  left: clamp(16px, 3vw, 50px);
+  animation: lateralSlideLeft 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
 }
-.hero-showcase-card:nth-child(1) {
-  animation: heroFloat1 6s ease-in-out infinite, heroCardIn 1s ease 0.3s both;
-  transform: rotateY(8deg) rotateX(2deg);
-}
-.hero-showcase-card:nth-child(2) {
-  animation: heroFloat2 6s ease-in-out infinite, heroCardIn 1s ease 0.6s both;
-  transform: rotateY(-8deg) rotateX(2deg);
-}
-.hero-showcase-card:hover {
-  transform: rotateY(0deg) rotateX(0deg) scale(1.08) translateY(-10px) !important;
-  border-color: rgba(0, 229, 255, 0.7);
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.6),
-    0 0 50px rgba(0, 229, 255, 0.2),
-    0 0 100px rgba(0, 229, 255, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  z-index: 10;
+.hero-lateral.right {
+  right: clamp(16px, 3vw, 50px);
+  animation: lateralSlideRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both;
 }
 
-/* Card inner glow overlay */
-.hero-showcase-card::before {
+/* Slide-in from sides */
+@keyframes lateralSlideLeft {
+  from { opacity: 0; transform: translateY(-50%) translateX(-120px) scale(0.7); }
+  to   { opacity: 1; transform: translateY(-50%) translateX(0) scale(1); }
+}
+@keyframes lateralSlideRight {
+  from { opacity: 0; transform: translateY(-50%) translateX(120px) scale(0.7); }
+  to   { opacity: 1; transform: translateY(-50%) translateX(0) scale(1); }
+}
+
+/* The card frame */
+.hero-lateral-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  background: rgba(4, 17, 31, 0.55);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 16px 50px rgba(0, 0, 0, 0.55),
+    0 0 25px rgba(0, 229, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease, border-color 0.3s;
+  cursor: pointer;
+}
+
+/* 3D tilt + continuous float */
+.hero-lateral.left .hero-lateral-card {
+  animation: lateralFloatL 7s ease-in-out infinite;
+}
+.hero-lateral.right .hero-lateral-card {
+  animation: lateralFloatR 7s ease-in-out 1.5s infinite;
+}
+@keyframes lateralFloatL {
+  0%, 100% { transform: rotateY(10deg) rotateX(2deg) translateY(0); }
+  25%  { transform: rotateY(8deg)  rotateX(-1deg) translateY(-12px); }
+  50%  { transform: rotateY(12deg) rotateX(3deg) translateY(-6px); }
+  75%  { transform: rotateY(7deg)  rotateX(0deg) translateY(-16px); }
+}
+@keyframes lateralFloatR {
+  0%, 100% { transform: rotateY(-10deg) rotateX(2deg) translateY(0); }
+  25%  { transform: rotateY(-8deg)  rotateX(-1deg) translateY(-14px); }
+  50%  { transform: rotateY(-12deg) rotateX(3deg) translateY(-4px); }
+  75%  { transform: rotateY(-7deg)  rotateX(0deg) translateY(-18px); }
+}
+
+/* Hover: flatten and grow */
+.hero-lateral-card:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.1) translateY(-8px) !important;
+  border-color: rgba(0, 229, 255, 0.65);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.6),
+    0 0 45px rgba(0, 229, 255, 0.18),
+    0 0 90px rgba(0, 229, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Glow overlay */
+.hero-lateral-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 229, 255, 0.08) 0%,
-    transparent 40%,
-    transparent 60%,
-    rgba(0, 229, 255, 0.04) 100%
-  );
+  background: linear-gradient(135deg, rgba(0,229,255,0.07) 0%, transparent 45%, transparent 55%, rgba(0,229,255,0.03) 100%);
   z-index: 2;
   pointer-events: none;
   transition: opacity 0.4s;
 }
-.hero-showcase-card:hover::before {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 229, 255, 0.15) 0%,
-    transparent 40%,
-    transparent 60%,
-    rgba(0, 229, 255, 0.08) 100%
-  );
+.hero-lateral-card:hover::before {
+  background: linear-gradient(135deg, rgba(0,229,255,0.14) 0%, transparent 45%, transparent 55%, rgba(0,229,255,0.07) 100%);
 }
 
-/* Scanning light sweep */
-.hero-showcase-card::after {
+/* Shine sweep */
+.hero-lateral-card::after {
   content: '';
   position: absolute;
-  top: -100%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    115deg,
-    transparent 20%,
-    rgba(0, 229, 255, 0.06) 40%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(0, 229, 255, 0.06) 60%,
-    transparent 80%
-  );
-  animation: shineSwipe 5s ease-in-out infinite;
+  top: -100%; left: -60%;
+  width: 220%; height: 220%;
+  background: linear-gradient(115deg, transparent 25%, rgba(0,229,255,0.05) 42%, rgba(255,255,255,0.09) 50%, rgba(0,229,255,0.05) 58%, transparent 75%);
+  animation: lateralShine 6s ease-in-out infinite;
   z-index: 3;
   pointer-events: none;
 }
-.hero-showcase-card:nth-child(2)::after {
-  animation-delay: 2.5s;
+.hero-lateral.right .hero-lateral-card::after {
+  animation-delay: 3s;
+}
+@keyframes lateralShine {
+  0%, 100% { transform: translateX(-90%); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateX(90%); opacity: 1; }
+  60% { opacity: 0; }
 }
 
-/* Image container */
-.hero-showcase-img {
+/* Image wrapper */
+.hero-lateral-img {
   position: relative;
   z-index: 1;
-  padding: 12px;
+  padding: 10px;
 }
-.hero-showcase-img img {
-  width: 100%;
-  height: auto;
+.hero-lateral-img img {
+  width: 100%; height: auto;
   display: block;
-  border-radius: 8px;
-  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  border-radius: 6px;
+  transition: transform 0.5s cubic-bezier(0.2,0.8,0.2,1), filter 0.4s;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,0.3));
 }
-.hero-showcase-card:hover .hero-showcase-img img {
-  transform: scale(1.03);
-  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4)) brightness(1.05);
+.hero-lateral-card:hover .hero-lateral-img img {
+  transform: scale(1.04);
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.4)) brightness(1.06);
 }
 
-/* Card label */
-.hero-showcase-label {
+/* Label bar */
+.hero-lateral-label {
   position: relative;
   z-index: 4;
-  padding: 10px 16px;
+  padding: 8px 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  background: rgba(4, 17, 31, 0.7);
-  border-top: 1px solid rgba(0, 229, 255, 0.15);
+  gap: 7px;
+  background: rgba(4, 17, 31, 0.75);
+  border-top: 1px solid rgba(0, 229, 255, 0.12);
 }
-.hero-showcase-label-dot {
-  width: 5px;
-  height: 5px;
+.hero-lateral-dot {
+  width: 5px; height: 5px;
   border-radius: 50%;
   background: var(--neon);
   box-shadow: 0 0 8px var(--neon);
   animation: ping 2s ease-in-out infinite;
 }
-.hero-showcase-label-text {
+.hero-lateral-text {
   font-family: 'Orbitron', monospace;
-  font-size: clamp(7px, 1vw, 9px);
+  font-size: clamp(6px, 0.9vw, 9px);
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--neon);
 }
 
-/* Neon corner accents */
-.hero-showcase-corner {
+/* Corner neon accents */
+.hero-lateral-corner {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 16px; height: 16px;
   z-index: 5;
   pointer-events: none;
 }
-.hero-showcase-corner::before,
-.hero-showcase-corner::after {
+.hero-lateral-corner::before,
+.hero-lateral-corner::after {
   content: '';
   position: absolute;
   background: var(--neon);
-  box-shadow: 0 0 6px var(--neon);
-  transition: all 0.4s;
+  box-shadow: 0 0 5px var(--neon);
+  transition: all 0.3s;
 }
-.hero-showcase-corner.tl { top: 6px; left: 6px; }
-.hero-showcase-corner.tr { top: 6px; right: 6px; }
-.hero-showcase-corner.bl { bottom: 6px; left: 6px; }
-.hero-showcase-corner.br { bottom: 6px; right: 6px; }
-.hero-showcase-corner.tl::before,
-.hero-showcase-corner.bl::before { left: 0; width: 14px; height: 1px; }
-.hero-showcase-corner.tr::before,
-.hero-showcase-corner.br::before { right: 0; width: 14px; height: 1px; }
-.hero-showcase-corner.tl::after,
-.hero-showcase-corner.tr::after { top: 0; width: 1px; height: 14px; }
-.hero-showcase-corner.bl::after,
-.hero-showcase-corner.br::after { bottom: 0; width: 1px; height: 14px; }
-.hero-showcase-corner.tl::before { top: 0; }
-.hero-showcase-corner.tl::after { left: 0; }
-.hero-showcase-corner.tr::before { top: 0; }
-.hero-showcase-corner.tr::after { right: 0; }
-.hero-showcase-corner.bl::before { bottom: 0; }
-.hero-showcase-corner.bl::after { left: 0; }
-.hero-showcase-corner.br::before { bottom: 0; }
-.hero-showcase-corner.br::after { right: 0; }
+.hero-lateral-corner.tl { top: 5px; left: 5px; }
+.hero-lateral-corner.tr { top: 5px; right: 5px; }
+.hero-lateral-corner.bl { bottom: 5px; left: 5px; }
+.hero-lateral-corner.br { bottom: 5px; right: 5px; }
+.hero-lateral-corner.tl::before, .hero-lateral-corner.bl::before { left: 0; width: 12px; height: 1px; }
+.hero-lateral-corner.tr::before, .hero-lateral-corner.br::before { right: 0; width: 12px; height: 1px; }
+.hero-lateral-corner.tl::after,  .hero-lateral-corner.tr::after  { top: 0; width: 1px; height: 12px; }
+.hero-lateral-corner.bl::after,  .hero-lateral-corner.br::after  { bottom: 0; width: 1px; height: 12px; }
+.hero-lateral-corner.tl::before { top: 0; } .hero-lateral-corner.tl::after { left: 0; }
+.hero-lateral-corner.tr::before { top: 0; } .hero-lateral-corner.tr::after { right: 0; }
+.hero-lateral-corner.bl::before { bottom: 0; } .hero-lateral-corner.bl::after { left: 0; }
+.hero-lateral-corner.br::before { bottom: 0; } .hero-lateral-corner.br::after { right: 0; }
 
-.hero-showcase-card:hover .hero-showcase-corner::before,
-.hero-showcase-card:hover .hero-showcase-corner::after {
-  box-shadow: 0 0 12px var(--neon), 0 0 24px rgba(0, 229, 255, 0.3);
-}
-
-/* Floating keyframes */
-@keyframes heroFloat1 {
-  0%, 100% { transform: rotateY(8deg) rotateX(2deg) translateY(0); }
-  50% { transform: rotateY(6deg) rotateX(0deg) translateY(-14px); }
-}
-@keyframes heroFloat2 {
-  0%, 100% { transform: rotateY(-8deg) rotateX(2deg) translateY(0); }
-  50% { transform: rotateY(-6deg) rotateX(0deg) translateY(-14px); }
-}
-@keyframes heroCardIn {
-  from { opacity: 0; transform: translateY(60px) rotateX(15deg) scale(0.8); }
-  to { opacity: 1; }
-}
-@keyframes shineSwipe {
-  0%, 100% { transform: translateX(-80%) rotate(0deg); opacity: 0; }
-  15% { opacity: 1; }
-  50% { transform: translateX(80%) rotate(0deg); opacity: 1; }
-  65% { opacity: 0; }
+.hero-lateral-card:hover .hero-lateral-corner::before,
+.hero-lateral-card:hover .hero-lateral-corner::after {
+  box-shadow: 0 0 10px var(--neon), 0 0 20px rgba(0,229,255,0.3);
 }
 
 .hero-cta-row{
@@ -1991,24 +1975,8 @@ footer{
   footer{flex-direction:column;text-align:center}
   .secretaria-grid{grid-template-columns:1fr}
   .secretaria-card.featured{max-width:100%}
-  /* Hero showcase responsive */
-  .hero-showcase {
-    flex-direction: column;
-    gap: 16px;
-  }
-  .hero-showcase-card {
-    width: clamp(200px, 65vw, 280px);
-  }
-  .hero-showcase-card:nth-child(1) {
-    animation: heroFloatMobile 5s ease-in-out infinite, heroCardIn 1s ease 0.3s both;
-  }
-  .hero-showcase-card:nth-child(2) {
-    animation: heroFloatMobile 5s ease-in-out 2.5s infinite, heroCardIn 1s ease 0.6s both;
-  }
-}
-@keyframes heroFloatMobile {
-  0%, 100% { transform: rotateY(0deg) rotateX(0deg) translateY(0); }
-  50% { transform: rotateY(0deg) rotateX(0deg) translateY(-10px); }
+  /* Hide lateral images on small screens */
+  .hero-lateral { display: none; }
 }
 </style>
 </head>
@@ -2127,38 +2095,6 @@ footer{
       <span>Soluciones Globales</span>
     </h1>
 
-    <!-- ═══ HERO SHOWCASE ANIMATED IMAGES ═══ -->
-    <div class="hero-showcase">
-      <!-- Card 1 -->
-      <div class="hero-showcase-card">
-        <div class="hero-showcase-corner tl"></div>
-        <div class="hero-showcase-corner tr"></div>
-        <div class="hero-showcase-corner bl"></div>
-        <div class="hero-showcase-corner br"></div>
-        <div class="hero-showcase-img">
-          <img src="MULTIMEDIA/19.svg" alt="BID Regional — Documento Oficial" loading="eager">
-        </div>
-        <div class="hero-showcase-label">
-          <span class="hero-showcase-label-dot"></span>
-          <span class="hero-showcase-label-text">Documento Oficial</span>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="hero-showcase-card">
-        <div class="hero-showcase-corner tl"></div>
-        <div class="hero-showcase-corner tr"></div>
-        <div class="hero-showcase-corner bl"></div>
-        <div class="hero-showcase-corner br"></div>
-        <div class="hero-showcase-img">
-          <img src="MULTIMEDIA/20.svg" alt="BID Regional — Propuesta Estratégica" loading="eager">
-        </div>
-        <div class="hero-showcase-label">
-          <span class="hero-showcase-label-dot"></span>
-          <span class="hero-showcase-label-text">Propuesta Estratégica</span>
-        </div>
-      </div>
-    </div>
-
     <div class="hero-divider"></div>
 
     <p class="hero-tagline">
@@ -2174,6 +2110,38 @@ footer{
         </svg>
         Síguenos
       </a>
+    </div>
+  </div>
+
+  <!-- ═══ LATERAL FLOATING IMAGES ═══ -->
+  <div class="hero-lateral left">
+    <div class="hero-lateral-card">
+      <div class="hero-lateral-corner tl"></div>
+      <div class="hero-lateral-corner tr"></div>
+      <div class="hero-lateral-corner bl"></div>
+      <div class="hero-lateral-corner br"></div>
+      <div class="hero-lateral-img">
+        <img src="MULTIMEDIA/19.svg" alt="BID Regional — Documento Oficial" loading="eager">
+      </div>
+      <div class="hero-lateral-label">
+        <span class="hero-lateral-dot"></span>
+        <span class="hero-lateral-text">Documento Oficial</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-lateral right">
+    <div class="hero-lateral-card">
+      <div class="hero-lateral-corner tl"></div>
+      <div class="hero-lateral-corner tr"></div>
+      <div class="hero-lateral-corner bl"></div>
+      <div class="hero-lateral-corner br"></div>
+      <div class="hero-lateral-img">
+        <img src="MULTIMEDIA/20.svg" alt="BID Regional — Propuesta Estratégica" loading="eager">
+      </div>
+      <div class="hero-lateral-label">
+        <span class="hero-lateral-dot"></span>
+        <span class="hero-lateral-text">Propuesta Estratégica</span>
+      </div>
     </div>
   </div>
 
