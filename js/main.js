@@ -5,7 +5,7 @@ let matrixInterval;
 if (canvas) {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  const letters = '0101010101ABCDEFGHIJKLMNOPQRSTUVWXYZ$+-*/=%""\\'#&_(),.;:?!\\\\|{}<>[]^~';
+  const letters = '0101010101ABCDEFGHIJKLMNOPQRSTUVWXYZ$+-*/=%""\'#&_(),.;:?!\\|{}<>[]^~';
   const fontSize = 14;
   const columns = canvas.width / fontSize;
   const drops = [];
