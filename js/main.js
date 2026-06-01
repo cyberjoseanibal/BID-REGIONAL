@@ -42,8 +42,7 @@ for(let i=0;i<35;i++){
 }
 
 /* ─── INTRO ─── */
-let targetHash = window.location.hash;
-if (targetHash) {
+if (window.location.hash) {
   history.replaceState(null, null, window.location.pathname + window.location.search);
 }
 const overlay = document.getElementById('intro-overlay');
@@ -67,14 +66,6 @@ function enterSite(){
     overlay.classList.add('hidden');
     document.body.style.overflow='auto';
     if(matrixInterval) clearInterval(matrixInterval);
-    
-    // Smooth scroll to target section if hash was captured on load
-    if (targetHash) {
-      const target = document.querySelector(targetHash);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
   }, 800);
 }
 
