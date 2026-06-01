@@ -12,3 +12,9 @@
 .mv-card.vision .mv-label{color:var(--gold)}
 .mv-title{font-family:'Orbitron',monospace;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--white);margin-bottom:16px}
 .mv-text{font-size:0.95rem;color:var(--dim);line-height:1.75}
+
+.mision-header{text-align:center;margin-bottom:clamp(40px,6vw,70px)}
+.mision-header .section-label{justify-content:center}
+.mision-header .section-label span{width:24px;height:1px;background:var(--neon);display:inline-block}
+.mision-header .section-title{margin:0 auto}
+

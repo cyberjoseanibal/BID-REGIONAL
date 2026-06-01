@@ -7,4 +7,6 @@ footer{background:var(--navy);border-top:1px solid rgba(66,165,245,0.1);padding:
 .footer-logo span{color:var(--neon)}
 .footer-sub{font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:0.25em;color:var(--dim);text-transform:uppercase}
 .footer-center{font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:0.15em;color:var(--dim);text-align:center}
+.footer-center span{font-size:10px;opacity:0.5}
 .footer-right{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(106,158,192,0.5);text-transform:uppercase}
+

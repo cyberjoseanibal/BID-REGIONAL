@@ -25,9 +25,16 @@ nav{
 .nav-cta{font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;padding:8px 20px;border:1.5px solid var(--b3);border-radius:4px;color:var(--b-light);background:rgba(21,101,192,0.12);transition:all 0.25s}
 .nav-cta:hover{background:var(--b1);color:var(--white);box-shadow:0 0 20px rgba(21,101,192,0.5)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s}
+.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform 0.3s ease, opacity 0.3s ease;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 /* Mobile nav */
 .mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(4,17,31,0.97);backdrop-filter:blur(20px);padding:24px clamp(20px,5vw,40px) 32px;border-bottom:1px solid rgba(66,165,245,0.15);z-index:99;flex-direction:column;gap:8px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim);padding:12px 0;border-bottom:1px solid rgba(66,165,245,0.08);transition:color 0.2s}
 .mobile-menu a:hover{color:var(--white)}
+.nav-links a.active{color:var(--white)}
+.nav-links a.active::after{transform:scaleX(1)}
+.mobile-menu a.active{color:var(--neon)}
+

@@ -38,3 +38,10 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:var(--navy)}
 ::-webkit-scrollbar-thumb{background:var(--b1);border-radius:3px}
+
+/* Custom Selection */
+::selection {
+  background: var(--neon);
+  color: var(--navy);
+}
+

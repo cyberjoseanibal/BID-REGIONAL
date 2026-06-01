@@ -31,7 +31,7 @@
 
 <!-- ═══ INTRO OVERLAY ═══ -->
 <div id="intro-overlay">
-  <canvas id="matrixCanvas" style="position:absolute;inset:0;z-index:0;opacity:0.25;pointer-events:none;"></canvas>
+  <canvas id="matrixCanvas"></canvas>
   <div class="intro-bg-grid"></div>
   
   <div class="fp-wrap">
@@ -243,9 +243,8 @@
   </div>
 </section>
 
-<!-- ═══ PROPUESTA ═══ -->
-<section id="propuesta" style="padding-top:120px;">
-  <div class="propuesta-grid" style="align-items: center;">
+<section id="propuesta">
+  <div class="propuesta-grid">
     
     <div class="propuesta-visual reveal">
       <div class="propuesta-img-wrap">
@@ -254,15 +253,15 @@
     </div>
 
     <div class="propuesta-text reveal reveal-delay-2">
-      <div class="section-label" style="justify-content: flex-start; color: var(--dim); letter-spacing: 0.3em; font-size: 11px; margin-bottom: 20px;">— DOCUMENTO OFICIAL</div>
-      <h2 class="section-title" style="line-height: 1.1; margin-bottom: 24px;">Base de Información <br><span>Documentada</span></h2>
-      <p class="section-desc" style="line-height: 1.8; color: #a0a8a2; font-size: 15px;">
-        Si todo lo que viste hasta aquí te emocionó, esto es lo que lo sostiene. El BID es el documento que convierte la visión en estructura — cada comité, cada agenda, cada detalle pensado para que esta Regional no solo se viva, sino que <strong style="color: var(--neon); font-weight: 600;">deje huellas</strong> en quienes lo protagonicen.
+      <div class="section-label">— DOCUMENTO OFICIAL</div>
+      <h2 class="section-title">Base de Información <br><span>Documentada</span></h2>
+      <p class="section-desc">
+        Si todo lo que viste hasta aquí te emocionó, esto es lo que lo sostiene. El BID es el documento que convierte la visión en estructura — cada comité, cada agenda, cada detalle pensado para que esta Regional no solo se viva, sino que <strong>deje huellas</strong> en quienes lo protagonicen.
       </p>
       
       <div class="propuesta-cta">
-        <a href="#" class="btn-primary" style="background: var(--white); color: var(--navy); border: none; font-weight: 800; padding: 14px 32px; box-shadow: 0 4px 20px rgba(255,255,255,0.2);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <a href="#" class="btn-bid">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
           ACCEDER AL BID
         </a>
       </div>
@@ -391,16 +390,16 @@
 
 <!-- ═══ MISIÓN & VISIÓN ═══ -->
 <section id="mision">
-  <div style="text-align:center;margin-bottom:clamp(40px,6vw,70px)">
-    <div class="section-label" style="justify-content:center">
-      <span style="width:24px;height:1px;background:var(--neon);display:inline-block"></span>
-      Propósito
+    <div class="mision-header">
+      <div class="section-label">
+        <span></span>
+        Propósito
+      </div>
+      <h2 class="section-title reveal">Misión <span>&</span> Visión</h2>
     </div>
-    <h2 class="section-title reveal" style="margin:0 auto">Misión <span>&</span> Visión</h2>
-  </div>
   <div class="mision-grid">
     <div class="mv-card reveal">
-      <div class="mv-label" style="display:flex;align-items:center;gap:6px;">
+      <div class="mv-label">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
         Misión
       </div>
@@ -410,7 +409,7 @@
       </p>
     </div>
     <div class="mv-card vision reveal reveal-delay-2">
-      <div class="mv-label" style="display:flex;align-items:center;gap:6px;color:var(--gold);">
+      <div class="mv-label">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
         Visión
       </div>
@@ -483,10 +482,10 @@
       Únete al movimiento que está transformando la educación, el liderazgo y la visión de los jóvenes dominicanos. El BID MR 12 empieza contigo.
     </p>
     <div class="hero-cta-row">
-      <a href="#propuesta" class="btn-primary" style="font-size:15px;padding:16px 36px">
+      <a href="#propuesta" class="btn-primary">
         Ver la Propuesta Completa <span class="arrow-icon">→</span>
       </a>
-      <a href="https://www.instagram.com/celider12/?hl=es" target="_blank" rel="noopener noreferrer" class="btn-instagram" style="font-size:15px;padding:16px 36px">
+      <a href="https://www.instagram.com/celider12/?hl=es" target="_blank" rel="noopener noreferrer" class="btn-instagram">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.842a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
         </svg>
@@ -504,7 +503,7 @@
   </div>
   <div class="footer-center">
     "Jóvenes Voces, Soluciones Globales"<br>
-    <span style="font-size:10px;opacity:0.5">República Dominicana · 2026</span>
+    <span>República Dominicana · 2026</span>
   </div>
   <div class="footer-right">
     Propuesta SGA<br>BID · Regional 12

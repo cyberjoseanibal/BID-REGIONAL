@@ -160,9 +160,13 @@ heroFp.addEventListener('touchstart',(e)=>{
 const hamburger=document.getElementById('hamburger');
 const mobileMenu=document.getElementById('mobileMenu');
 hamburger.addEventListener('click',()=>{
+  hamburger.classList.toggle('open');
   mobileMenu.classList.toggle('open');
 });
-function closeMobile(){mobileMenu.classList.remove('open')}
+function closeMobile(){
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}
 
 /* ─── SCROLL REVEAL ─── */
 const reveals=document.querySelectorAll('.reveal');
@@ -180,3 +184,23 @@ window.addEventListener('scroll',()=>{
     ?'rgba(4,17,31,0.98)'
     :'rgba(4,17,31,0.85)';
 });
+
+/* ─── ACTIVE NAV HIGHLIGHTING ─── */
+const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
+const sections = document.querySelectorAll('section[id]');
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === `#${id}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  });
+}, { threshold: 0.25, rootMargin: '-68px 0px -30% 0px' });
+sections.forEach(sec => navObserver.observe(sec));
+
