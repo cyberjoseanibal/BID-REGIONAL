@@ -94,6 +94,18 @@
     font-size: 12px;
   }
 
+  /* Mobile BID Button */
+  .btn-bid {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 24px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+  }
+  .btn-bid:hover {
+    letter-spacing: 0.17em;
+  }
+
   /* Hero title smaller on mobile */
   .hero-title { font-size: clamp(1.8rem, 8vw, 3rem) !important; }
   .hero-title span { font-size: clamp(1.4rem, 6vw, 2.5rem) !important; }
