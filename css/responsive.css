@@ -60,8 +60,13 @@
   
   .hero-mobile-overlay { display: block; }
   .hero-bg video { 
-    object-position: 70% center; 
-    filter: brightness(0.35) contrast(1.2) hue-rotate(10deg);
+    object-position: center; 
+    filter: brightness(0.4) saturate(1.1) contrast(1.1);
+  }
+  /* Fallback: if the video is blocked or loading, make sure the background container shows the poster image styled correctly */
+  .hero-bg {
+    background: url('../MULTIMEDIA/video_placeholder.webp') no-repeat center center;
+    background-size: cover;
   }
   .hero-content{padding-bottom: 50px;}
   .hero-scroll{bottom: 12px;}
