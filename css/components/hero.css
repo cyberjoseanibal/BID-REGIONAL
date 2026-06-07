@@ -49,12 +49,13 @@
     linear-gradient(90deg, rgba(188,134,255,0.04) 1px, transparent 1px);
   background-size:60px 60px;
   mask-image:radial-gradient(ellipse at center, black 20%, transparent 70%);
+  pointer-events: none;
 }
 /* particles */
-.particles{position:absolute;inset:0;z-index:5;overflow:hidden}
+.particles{position:absolute;inset:0;z-index:5;overflow:hidden;pointer-events:none}
 .particle{position:absolute;width:2px;height:2px;background:var(--lavanda);border-radius:50%;animation:float-up linear infinite;opacity:0;box-shadow:0 0 4px var(--lavanda)}
 @keyframes float-up{0%{transform:translateY(100vh) translateX(0);opacity:0}10%{opacity:0.7}90%{opacity:0.7}100%{transform:translateY(-100px) translateX(30px);opacity:0}}
-.hero-content{position:relative;z-index:3;text-align:center;padding:0 20px;padding-top:var(--nav-h);display:flex;flex-direction:column;align-items:center;gap:20px;animation:hero-in 1.2s ease both}
+.hero-content{position:relative;z-index:10;text-align:center;padding:0 20px;padding-top:var(--nav-h);display:flex;flex-direction:column;align-items:center;gap:20px;animation:hero-in 1.2s ease both}
 @keyframes hero-in{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;padding:6px 18px;
