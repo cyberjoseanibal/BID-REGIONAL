@@ -61,7 +61,7 @@
   .hero-mobile-overlay { display: block; }
   .hero-bg video { 
     object-position: center; 
-    filter: brightness(0.4) saturate(1.1) contrast(1.1);
+    filter: brightness(0.75) saturate(1.2) contrast(1.05);
   }
   /* Fallback: if the video is blocked or loading, make sure the background container shows the poster image styled correctly */
   .hero-bg {
