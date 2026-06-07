@@ -65,12 +65,12 @@ const msgs = [
 ];
 
 function enterSite(){
-  overlay.classList.add('warp-speed');
+  overlay.classList.add('intro-reveal');
   setTimeout(() => {
     overlay.classList.add('hidden');
     document.body.style.overflow='auto';
     if(matrixInterval) clearInterval(matrixInterval);
-  }, 800);
+  }, 1000);
 }
 
 function runScan(){
