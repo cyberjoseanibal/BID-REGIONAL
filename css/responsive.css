@@ -35,20 +35,15 @@
 /* ─── MOBILE (max 600px) ─── */
 @media(max-width:600px){
   /* Intro compact for mobile */
-  .intro-badge {
-    font-size: 7px;
-    padding: 4px 12px;
-    letter-spacing: 0.25em;
-  }
-  .intro-title{font-size: clamp(3rem, 14vw, 5rem) !important; letter-spacing: 0.02em;}
-  .intro-title-gold{font-size: 1.4rem !important; letter-spacing: 0.15em !important;}
+  .intro-title{font-size: clamp(3.6rem, 16vw, 6rem) !important; letter-spacing: 0.02em;}
+  .intro-title-gold{font-size: 1.8rem !important; letter-spacing: 0.15em !important;}
   .intro-subtitle-italic {
-    font-size: clamp(9px, 2.8vw, 12px) !important;
+    font-size: clamp(11px, 3vw, 14px) !important;
     letter-spacing: 0.12em !important;
-    padding: 5px 12px !important;
+    padding: 6px 14px !important;
     white-space: normal !important;
     max-width: 90%;
-    margin: 10px auto 0 !important;
+    margin: 12px auto 0 !important;
     line-height: 1.4;
   }
   .fp-wrap{
@@ -58,10 +53,10 @@
   .fp-wrap::before { width: 145px; height: 145px; }
   .fp-wrap::after { width: 130px; height: 130px; }
   .fp-btn { width: 115px !important; height: 115px !important; }
-  .intro-label-top { font-size: 10px; margin-top: 8px; margin-bottom: 4px; }
-  .intro-divider{margin: 10px 0 !important;}
-  .intro-enter-btn { padding: 11px 28px; font-size: 12px; }
-  .intro-year { font-size: 8px; margin-top: 12px; }
+  .intro-label-top { font-size: 13px; margin-top: 10px; margin-bottom: 6px; }
+  .intro-divider{margin: 12px 0 !important;}
+  .intro-enter-btn { padding: 12px 32px; font-size: 14px; }
+  .intro-year { font-size: 9px; margin-top: 14px; }
   
   .hero-mobile-overlay { display: block; }
   .hero-bg video { 
