@@ -32,7 +32,7 @@
   --gold2:       #B1A0FE;
   --neon:        #BC86FF;
   --neon2:       #5504D5;
-  --dim:         #8B7DB8;
+  --dim:         #B3A8DB;
   --glow:        rgba(188,134,255,0.18);
   --glow-purple: rgba(85,4,213,0.35);
   --glow-royal:  rgba(34,40,229,0.30);
@@ -60,6 +60,6 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 
 /* Custom Selection */
 ::selection {
-  background: var(--neon-purple);
-  color: var(--white);
+  background: var(--lavanda);
+  color: var(--midnight);
 }

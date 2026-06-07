@@ -162,6 +162,11 @@ function closeMobile(){
   hamburger.classList.remove('open');
   mobileMenu.classList.remove('open');
 }
+if (mobileMenu) {
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobile);
+  });
+}
 
 /* ─── SCROLL REVEAL ─── */
 const reveals=document.querySelectorAll('.reveal');
