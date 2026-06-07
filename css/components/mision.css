@@ -62,7 +62,7 @@
 }
 .mv-card.valores .mv-label{color:var(--lavanda)}
 .mv-title{font-family:'Orbitron',monospace;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--white);margin-bottom:16px}
-.mv-text{font-size:0.95rem;color:var(--dim);line-height:1.75;transition:color 0.3s ease}
+.mv-text{font-size:0.95rem;color:var(--dim);line-height:1.75;text-align:justify;transition:color 0.3s ease}
 .mv-card:hover .mv-text{color:var(--white)}
 .mv-values-list {
   list-style: none;
