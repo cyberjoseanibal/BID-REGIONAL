@@ -14,3 +14,19 @@ footer{
 .footer-center{font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:0.15em;color:var(--dim);text-align:center}
 .footer-center span{font-size:10px;opacity:0.5}
 .footer-right{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(139,125,184,0.5);text-transform:uppercase}
+.sub-footer {
+  background: var(--navy2);
+  border-top: 1px solid rgba(188, 134, 255, 0.04);
+  padding: 18px 20px;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--dim);
+  text-transform: uppercase;
+}
+.sub-footer span {
+  color: var(--lavanda);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(188, 134, 255, 0.3);
+}
