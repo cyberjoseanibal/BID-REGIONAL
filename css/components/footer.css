@@ -1,5 +1,5 @@
 footer{
-  background:linear-gradient(180deg, var(--midnight) 0%, #020A3A 100%);
+  background:linear-gradient(180deg, var(--midnight) 0%, var(--navy2) 100%);
   border-top:1px solid rgba(188,134,255,0.08);
   padding:40px clamp(20px,6vw,80px);
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;

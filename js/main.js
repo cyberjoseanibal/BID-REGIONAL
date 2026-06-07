@@ -77,22 +77,23 @@ function runScan(){
   const gold = document.querySelector('.intro-title-gold');
   if(title) title.classList.add('glitch-out');
   if(gold) gold.classList.add('glitch-out');
-  let prog=0;
-  scanMsg.textContent=msgs[0];
-  const interval=setInterval(()=>{
-    prog+=4;
-    progressBar.style.width=prog+'%';
-    if(prog===24)scanMsg.textContent=msgs[1];
-    if(prog===60)scanMsg.textContent=msgs[2];
-    if(prog===84)scanMsg.textContent=msgs[3];
-    if(prog>=100){
-      clearInterval(interval);
-      setTimeout(()=>{
-        scanModal.classList.remove('open');
-        enterSite();
-      }, 300);
-    }
-  }, 15);
+  
+  progressBar.style.transition = 'none';
+  progressBar.style.width = '0%';
+  progressBar.offsetHeight; // Force reflow
+  
+  progressBar.style.transition = 'width 1.2s cubic-bezier(0.22, 1, 0.36, 1)';
+  progressBar.style.width = '100%';
+  
+  scanMsg.textContent = msgs[0];
+  setTimeout(() => { scanMsg.textContent = msgs[1]; }, 300);
+  setTimeout(() => { scanMsg.textContent = msgs[2]; }, 700);
+  setTimeout(() => { scanMsg.textContent = msgs[3]; }, 1000);
+  
+  setTimeout(() => {
+    scanModal.classList.remove('open');
+    enterSite();
+  }, 1300);
 }
 
 const titleEl = document.getElementById('type-target');

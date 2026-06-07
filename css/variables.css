@@ -1,4 +1,5 @@
 :root {
+  /* ─── BASE COLOR PALETTE ─── */
   --midnight:    #051464;   
   --royal:       #2228E5;   
   --lavanda:     #BC86FF;   
@@ -10,23 +11,28 @@
   --deep-blue:   #1E2282;   
   --light-gray:  #F3F3F3;   
   --black:       #000000;   
-  --navy:        #051464;
+
+  /* ─── COMPATIBILITY ALIASES ─── */
+  --navy:        var(--midnight);
   --navy2:       #0A0E4A;
   --navy3:       #120B5E;
-  --b1:          #2228E5;
-  --b2:          #1E2282;
-  --b3:          #468DFC;
-  --b4:          #B1A0FE;
-  --b-light:     #BC86FF;
+  --b1:          var(--royal);
+  --b2:          var(--deep-blue);
+  --b3:          var(--sky);
+  --b4:          var(--soft-lav);
+  --b-light:     var(--lavanda);
   --b-pale:      #D8C4FF;
-  --gold:        #BC86FF;
-  --gold2:       #B1A0FE;
-  --neon:        #BC86FF;
-  --neon2:       #5504D5;
+  --gold:        var(--lavanda);
+  --gold2:       var(--soft-lav);
+  --neon:        var(--lavanda);
+  --neon2:       var(--neon-purple);
   --dim:         #B3A8DB;
-  --glow:        rgba(188,134,255,0.18);
-  --glow-purple: rgba(85,4,213,0.35);
-  --glow-royal:  rgba(34,40,229,0.30);
+
+  /* ─── SHADOWS & GLOWS ─── */
+  --glow:        rgba(188, 134, 255, 0.18);
+  --glow-purple: rgba(85, 4, 213, 0.35);
+  --glow-royal:  rgba(34, 40, 229, 0.30);
+  
   --nav-h:       68px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}

@@ -89,12 +89,12 @@
 .btn-bid:hover {
   transform: translateY(-3px);
   background: linear-gradient(135deg, var(--royal) 0%, var(--neon-purple) 100%);
-  border-color: #ffffff;
+  border-color: var(--white);
   box-shadow: 
     0 8px 30px rgba(85, 4, 213, 0.45), 
     0 0 20px rgba(188, 134, 255, 0.3),
     inset 0 0 10px rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  color: var(--white);
   letter-spacing: 0.22em;
 }
 .btn-bid svg {
@@ -105,6 +105,6 @@
 }
 .btn-bid:hover svg {
   transform: scale(1.15) rotate(-5deg);
-  stroke: #ffffff;
-  filter: drop-shadow(0 0 5px #ffffff);
+  stroke: var(--white);
+  filter: drop-shadow(0 0 5px var(--white));
 }
