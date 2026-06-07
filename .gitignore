@@ -1,0 +1,3 @@
+# Ignore original raw camera images to prevent repository bloat
+*.JPG.jpeg
+*.jpg.jpeg
