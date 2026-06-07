@@ -1,13 +1,37 @@
 /* ═══════════════════════════════════════
-   CALL TO ACTION
+   CALL TO ACTION — SGC R.12 MR 2026
+   Premium CTA + 3D Glow Background
 ═══════════════════════════════════════ */
-#cta{background:linear-gradient(135deg,var(--navy3) 0%,var(--b2) 50%,var(--navy3) 100%);position:relative;overflow:hidden;text-align:center}
-#cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(0,229,255,0.1) 0%,transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(21,101,192,0.15) 0%,transparent 60%)}
+#cta{
+  background:linear-gradient(135deg, var(--imperial) 0%, var(--neon-purple) 30%, var(--royal) 60%, var(--imperial) 100%);
+  position:relative;overflow:hidden;text-align:center;
+}
+#cta::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(188,134,255,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(85,4,213,0.2) 0%, transparent 60%);
+}
+#cta::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size:50px 50px;pointer-events:none;
+}
 .cta-content{position:relative;z-index:1;max-width:700px;margin:0 auto}
 .cta-title{font-family:'Orbitron',monospace;font-size:clamp(1.8rem,5vw,3.5rem);font-weight:900;letter-spacing:0.06em;color:var(--white);line-height:1.1;margin-bottom:16px}
-.cta-title span{color:var(--neon)}
-.cta-sub{font-size:clamp(0.9rem,1.8vw,1.1rem);color:rgba(238,246,255,0.65);line-height:1.7;margin-bottom:36px}
-.cta-fp{width:80px;height:80px;margin:0 auto 24px;border-radius:50%;overflow:hidden;border:2px solid var(--neon);box-shadow:0 0 16px var(--neon);animation:fp-glow 3s ease-in-out infinite}
+.cta-title span{
+  background:linear-gradient(135deg, var(--lavanda), var(--sky));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.cta-sub{font-size:clamp(0.9rem,1.8vw,1.1rem);color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:36px}
+.cta-fp{
+  width:80px;height:80px;margin:0 auto 24px;border-radius:50%;overflow:hidden;
+  border:2px solid var(--lavanda);
+  box-shadow:0 0 16px rgba(188,134,255,0.5), 0 0 40px rgba(85,4,213,0.3);
+  animation:fp-glow 3s ease-in-out infinite;
+}
 .cta-fp img{width:100%;height:100%;object-fit:cover}
 
 .cta-content .btn-primary,

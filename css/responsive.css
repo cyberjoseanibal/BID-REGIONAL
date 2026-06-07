@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — SGC R.12 MR 2026
  ═══════════════════════════════════════ */
 @media(max-width:900px){
   .propuesta-grid,
@@ -21,7 +21,7 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(to bottom, rgba(4,17,31,0.6), rgba(4,17,31,0.8));
+  background: linear-gradient(to bottom, rgba(5,20,100,0.6), rgba(32,13,87,0.8));
   pointer-events: none;
 }
 
@@ -42,7 +42,7 @@
   .hero-mobile-overlay { display: block; }
   .hero-bg video { 
     object-position: 70% center; 
-    filter: brightness(0.4) contrast(1.2);
+    filter: brightness(0.35) contrast(1.2) hue-rotate(10deg);
   }
   .hero-content{padding-bottom: 60px;}
   .hero-scroll{bottom: 15px;}

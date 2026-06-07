@@ -1,30 +1,48 @@
 /* ═══════════════════════════════════════
-   VARIABLES & RESET
+   VARIABLES & RESET — SGC R.12 MR 2026
+   Identidad Visual: Futurista · Moderno · Limpio · De calidad
 ═══════════════════════════════════════ */
 :root {
-  --b1: #1565C0;
-  --b2: #0D47A1;
-  --b3: #1E88E5;
-  --b4: #42A5F5;
-  --b-light: #90CAF9;
-  --b-pale: #BBDEFB;
-  --navy: #04111F;
-  --navy2: #071B30;
-  --navy3: #0A2340;
-  --gold: #FFD54F;
-  --gold2: #FFB300;
-  --neon: #00E5FF;
-  --neon2: #29B6F6;
-  --white: #EEF6FF;
-  --dim: #6A9EC0;
-  --glow: rgba(0,229,255,0.18);
-  --nav-h: 68px;
+  /* ─── PALETA PRINCIPAL ─── */
+  --midnight:    #051464;   /* Azul Medianoche — fondo primario */
+  --royal:       #2228E5;   /* Azul Royal Vibrante — acento principal */
+  --lavanda:     #BC86FF;   /* Nude Lavanda — acento suave */
+  --neon-purple: #5504D5;   /* Púrpura Neón — glow y detalles 3D */
+  --imperial:    #200D57;   /* Morado Imperial — fondo secundario */
+
+  /* ─── EXTRAS DE APOYO ─── */
+  --sky:         #468DFC;   /* Azul cielo brillante */
+  --soft-lav:    #B1A0FE;   /* Lavanda suave */
+  --white:       #FFFFFF;   /* Blanco puro */
+  --deep-blue:   #1E2282;   /* Azul profundo */
+  --light-gray:  #F3F3F3;   /* Gris claro */
+  --black:       #000000;   /* Negro puro */
+
+  /* ─── ALIASES SEMÁNTICOS ─── */
+  --navy:        #051464;
+  --navy2:       #0A0E4A;
+  --navy3:       #120B5E;
+  --b1:          #2228E5;
+  --b2:          #1E2282;
+  --b3:          #468DFC;
+  --b4:          #B1A0FE;
+  --b-light:     #BC86FF;
+  --b-pale:      #D8C4FF;
+  --gold:        #BC86FF;
+  --gold2:       #B1A0FE;
+  --neon:        #BC86FF;
+  --neon2:       #5504D5;
+  --dim:         #8B7DB8;
+  --glow:        rgba(188,134,255,0.18);
+  --glow-purple: rgba(85,4,213,0.35);
+  --glow-royal:  rgba(34,40,229,0.30);
+  --nav-h:       68px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{
   font-family:'Exo 2',sans-serif;
-  background:var(--navy);
+  background:var(--midnight);
   color:var(--white);
   overflow-x:hidden;
 }
@@ -33,15 +51,15 @@ img{display:block;max-width:100%}
 button{cursor:pointer;font-family:inherit;border:none;background:none}
 
 /* ═══════════════════════════════════════
-   SCROLLBAR
+   SCROLLBAR — Tema Púrpura
 ═══════════════════════════════════════ */
 ::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--navy)}
-::-webkit-scrollbar-thumb{background:var(--b1);border-radius:3px}
+::-webkit-scrollbar-track{background:var(--midnight)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg, var(--neon-purple), var(--royal));border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg, var(--lavanda), var(--neon-purple))}
 
 /* Custom Selection */
 ::selection {
-  background: var(--neon);
-  color: var(--navy);
+  background: var(--neon-purple);
+  color: var(--white);
 }
-

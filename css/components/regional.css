@@ -1,16 +1,39 @@
 /* ═══════════════════════════════════════
-   REGIONAL / MAPA
+   REGIONAL / MAPA — SGC R.12 MR 2026
 ═══════════════════════════════════════ */
-#regional{background:var(--navy2);position:relative;overflow:hidden}
+#regional{
+  background:linear-gradient(135deg, var(--navy2) 0%, var(--imperial) 50%, var(--midnight) 100%);
+  position:relative;overflow:hidden;
+}
+#regional::before{
+  content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle, rgba(85,4,213,0.1) 0%, transparent 60%);pointer-events:none;
+}
 .regional-content{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
 .regional-info{}
 .regional-info .section-desc{margin-bottom:28px}
 .info-list{display:flex;flex-direction:column;gap:14px;margin-top:24px}
-.info-item{display:flex;align-items:flex-start;gap:14px;padding:16px;border:1px solid rgba(66,165,245,0.12);border-radius:8px;background:rgba(21,101,192,0.05);transition:all 0.2s}
-.info-item:hover{border-color:rgba(0,229,255,0.25);background:rgba(0,229,255,0.04)}
-.info-dot{width:8px;height:8px;border-radius:50%;background:var(--neon);flex-shrink:0;margin-top:6px;box-shadow:0 0 8px var(--neon)}
-.info-label{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--neon);margin-bottom:3px}
+.info-item{
+  display:flex;align-items:flex-start;gap:14px;padding:16px;
+  border:1px solid rgba(188,134,255,0.1);border-radius:8px;
+  background:rgba(85,4,213,0.06);
+  transition:all 0.3s;
+  box-shadow:0 0 1px rgba(188,134,255,0.05);
+}
+.info-item:hover{
+  border-color:rgba(188,134,255,0.3);
+  background:rgba(85,4,213,0.12);
+  box-shadow:0 0 15px rgba(85,4,213,0.15);
+  transform:translateX(4px);
+}
+.info-dot{width:8px;height:8px;border-radius:50%;background:var(--lavanda);flex-shrink:0;margin-top:6px;box-shadow:0 0 8px var(--lavanda), 0 0 16px rgba(85,4,213,0.3)}
+.info-label{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--lavanda);margin-bottom:3px}
 .info-value{font-size:0.95rem;color:var(--white);font-weight:500}
 .regional-visual{position:relative}
-.regional-img{border-radius:12px;overflow:hidden;border:1px solid rgba(66,165,245,0.2);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
-.regional-img img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:saturate(0.85) brightness(0.9)}
+.regional-img{
+  border-radius:12px;overflow:hidden;
+  border:1px solid rgba(188,134,255,0.2);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5), 0 0 25px rgba(85,4,213,0.1);
+}
+.regional-img img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:saturate(0.85) brightness(0.9);transition:transform 0.6s ease, filter 0.4s}
+.regional-img:hover img{transform:scale(1.03);filter:saturate(1) brightness(0.95)}

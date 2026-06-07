@@ -1,12 +1,19 @@
 /* ═══════════════════════════════════════
-   FOOTER
+   FOOTER — SGC R.12 MR 2026
 ═══════════════════════════════════════ */
-footer{background:var(--navy);border-top:1px solid rgba(66,165,245,0.1);padding:40px clamp(20px,6vw,80px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer{
+  background:linear-gradient(180deg, var(--midnight) 0%, #020A3A 100%);
+  border-top:1px solid rgba(188,134,255,0.08);
+  padding:40px clamp(20px,6vw,80px);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
+}
 .footer-left{}
 .footer-logo{font-family:'Orbitron',monospace;font-size:clamp(14px,2vw,18px);font-weight:900;letter-spacing:0.12em;color:var(--white);margin-bottom:6px}
-.footer-logo span{color:var(--neon)}
+.footer-logo span{
+  background:linear-gradient(135deg, var(--lavanda), var(--sky));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
 .footer-sub{font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:0.25em;color:var(--dim);text-transform:uppercase}
 .footer-center{font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:0.15em;color:var(--dim);text-align:center}
 .footer-center span{font-size:10px;opacity:0.5}
-.footer-right{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(106,158,192,0.5);text-transform:uppercase}
-
+.footer-right{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(139,125,184,0.5);text-transform:uppercase}

@@ -1,41 +1,57 @@
 /* ═══════════════════════════════════════
-   ABOUT / PROPUESTA
+   ABOUT / PROPUESTA — SGC R.12 MR 2026
 ═══════════════════════════════════════ */
-#propuesta{background:var(--navy2);position:relative;overflow:hidden;padding-top:120px}
-#propuesta::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(21,101,192,0.12) 0%,transparent 70%);pointer-events:none}
+#propuesta{
+  background:linear-gradient(180deg, var(--midnight) 0%, var(--navy2) 50%, var(--midnight) 100%);
+  position:relative;overflow:hidden;padding-top:120px;
+}
+#propuesta::before{
+  content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(85,4,213,0.15) 0%,transparent 70%);pointer-events:none;
+}
 /* ─── 3D BOOK COVER ─── */
 .book-container{position:relative;width:280px;height:420px;margin:0 auto;transform-style:preserve-3d;transform:perspective(1200px) rotateY(-18deg) rotateX(4deg);transition:transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)}
 .book-container:hover{transform:perspective(1200px) rotateY(-5deg) rotateX(2deg) scale(1.05)}
-.book-cover{position:absolute;inset:0;background:linear-gradient(135deg, var(--navy2) 0%, var(--navy) 100%);border:1px solid var(--b3);border-radius:4px 12px 12px 4px;box-shadow:inset 4px 0 10px rgba(0,0,0,0.6), inset -1px 0 2px rgba(255,255,255,0.2);display:flex;flex-direction:column;padding:35px 20px 25px;overflow:hidden;z-index:2;transform:translateZ(15px)}
-.book-cover::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 80% 20%, rgba(0,229,255,0.15) 0%, transparent 60%);pointer-events:none}
+.book-cover{position:absolute;inset:0;background:linear-gradient(135deg, var(--navy2) 0%, var(--midnight) 100%);border:1px solid var(--neon-purple);border-radius:4px 12px 12px 4px;box-shadow:inset 4px 0 10px rgba(0,0,0,0.6), inset -1px 0 2px rgba(255,255,255,0.2);display:flex;flex-direction:column;padding:35px 20px 25px;overflow:hidden;z-index:2;transform:translateZ(15px)}
+.book-cover::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 80% 20%, rgba(85,4,213,0.2) 0%, transparent 60%);pointer-events:none}
 .book-top-text{font-family:'Rajdhani',sans-serif;font-size:8.5px;letter-spacing:0.15em;color:var(--dim);text-align:center;text-transform:uppercase;margin-bottom:auto;line-height:1.4}
-.book-title-bg{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);font-family:'Orbitron',monospace;font-size:140px;font-weight:900;color:rgba(0, 229, 255, 0.04);z-index:0;pointer-events:none}
+.book-title-bg{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);font-family:'Orbitron',monospace;font-size:140px;font-weight:900;color:rgba(85,4,213,0.06);z-index:0;pointer-events:none}
 .book-title{position:relative;z-index:1;font-family:'Rajdhani',sans-serif;font-size:32px;font-weight:700;line-height:1.05;text-align:center;color:var(--white);text-transform:uppercase;margin-bottom:auto;text-shadow:0 4px 15px rgba(0,0,0,0.8)}
-.book-title span{font-family:'Orbitron',monospace;color:var(--neon);font-size:36px;display:block;margin:4px 0}
-.book-author{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--white);text-align:center;position:relative;z-index:1;padding-top:15px;border-top:1px solid rgba(0,229,255,0.2)}
-.book-spine{position:absolute;left:0;top:0;width:30px;height:100%;background:linear-gradient(to right, var(--navy3), var(--navy2));transform-origin:left;transform:rotateY(-90deg);border-radius:4px 0 0 4px}
+.book-title span{font-family:'Orbitron',monospace;color:var(--lavanda);font-size:36px;display:block;margin:4px 0;text-shadow:0 0 15px rgba(188,134,255,0.5)}
+.book-author{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:0.15em;color:var(--white);text-align:center;position:relative;z-index:1;padding-top:15px;border-top:1px solid rgba(188,134,255,0.2)}
+.book-spine{position:absolute;left:0;top:0;width:30px;height:100%;background:linear-gradient(to right, var(--imperial), var(--navy2));transform-origin:left;transform:rotateY(-90deg);border-radius:4px 0 0 4px}
 .book-pages{position:absolute;right:-13px;top:2%;width:15px;height:96%;background:#e0e0e0;background-image:repeating-linear-gradient(to bottom, #d0d0d0 0px, #d0d0d0 2px, #e0e0e0 2px, #e0e0e0 4px);transform-origin:left;transform:rotateY(90deg) translateZ(15px);border-radius:0 4px 4px 0}
 .book-shadow{position:absolute;bottom:-20px;left:10px;width:100%;height:20px;background:rgba(0,0,0,0.6);filter:blur(15px);transform:rotateX(90deg) translateZ(-10px)}
 .propuesta-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center;max-width:1200px;margin:0 auto}
 .propuesta-text .section-label{justify-content:flex-start;color:var(--dim);letter-spacing:0.3em;font-size:11px;margin-bottom:20px}
 .propuesta-text .section-title{line-height:1.1;margin-bottom:24px}
-.propuesta-text .section-desc{line-height:1.8;color:#a0a8a2;font-size:15px}
-.propuesta-text strong{color:var(--neon);font-weight:600}
+.propuesta-text .section-desc{line-height:1.8;color:var(--dim);font-size:15px}
+.propuesta-text strong{color:var(--lavanda);font-weight:600;text-shadow:0 0 8px rgba(188,134,255,0.3)}
 .propuesta-visual{position:relative}
-.propuesta-img-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(66,165,245,0.2);box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative;max-width:380px;margin:0 auto}
+.propuesta-img-wrap{
+  border-radius:12px;overflow:hidden;
+  border:1px solid rgba(188,134,255,0.2);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(85,4,213,0.1);
+  position:relative;max-width:380px;margin:0 auto;
+}
 .propuesta-img-wrap img{width:100%;height:auto;object-fit:contain;filter:saturate(0.9);transition:transform 0.6s ease}
 .propuesta-img-wrap:hover img{transform:scale(1.03)}
-.propuesta-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(4,17,31,0.6) 0%,transparent 50%)}
-.propuesta-badge{position:absolute;bottom:-16px;left:24px;background:linear-gradient(135deg,var(--b2),var(--b1));border:1px solid rgba(66,165,245,0.4);border-radius:8px;padding:12px 20px;z-index:2;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
-.propuesta-badge-num{font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;color:var(--neon);line-height:1}
-.propuesta-badge-text{font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:0.2em;color:var(--b-light);text-transform:uppercase}
+.propuesta-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,20,100,0.6) 0%,transparent 50%)}
+.propuesta-badge{
+  position:absolute;bottom:-16px;left:24px;
+  background:linear-gradient(135deg, var(--neon-purple), var(--royal));
+  border:1px solid rgba(188,134,255,0.3);border-radius:8px;padding:12px 20px;z-index:2;
+  box-shadow:0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(85,4,213,0.2);
+}
+.propuesta-badge-num{font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;color:var(--lavanda);line-height:1}
+.propuesta-badge-text{font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:0.2em;color:var(--soft-lav);text-transform:uppercase}
 .propuesta-cta{margin-top:40px;display:flex;justify-content:center}
 .btn-bid {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--white);
-  color: var(--navy);
+  background: linear-gradient(135deg, var(--white) 0%, #F3F3F3 100%);
+  color: var(--midnight);
   border: none;
   font-family: 'Rajdhani', sans-serif;
   font-size: 14px;
@@ -43,7 +59,7 @@
   letter-spacing: 0.15em;
   padding: 14px 32px;
   border-radius: 6px;
-  box-shadow: 0 4px 20px rgba(255,255,255,0.15);
+  box-shadow: 0 4px 20px rgba(255,255,255,0.15), 0 0 30px rgba(188,134,255,0.1);
   transition: all 0.3s ease;
   text-transform: uppercase;
   text-decoration: none;
@@ -51,8 +67,8 @@
 .btn-bid:hover {
   transform: translateY(-2px);
   background: var(--white);
-  box-shadow: 0 8px 30px rgba(255,255,255,0.3);
-  color: var(--navy);
+  box-shadow: 0 8px 30px rgba(255,255,255,0.3), 0 0 40px rgba(188,134,255,0.15);
+  color: var(--midnight);
 }
 .btn-bid svg {
   transition: transform 0.3s ease;

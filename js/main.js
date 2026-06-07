@@ -1,26 +1,30 @@
-/* ─── MATRIX BACKGROUND ─── */
+/* ─── MATRIX BACKGROUND — SGC R.12 MR 2026 ─── */
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas.getContext('2d');
 let matrixInterval;
 if (canvas) {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  const letters = '0101010101ABCDEFGHIJKLMNOPQRSTUVWXYZ$+-*/=%""\'#&_(),.;:?!\\|{}<>[]^~';
+  const letters = '0101010101ABCDEFGHIJKLMNOPQRSTUVWXYZ$+-*/=%""\\'#&_(),.;:?!\\|{}<>[]^~';
   const fontSize = 14;
   const columns = canvas.width / fontSize;
   const drops = [];
   for(let x = 0; x < columns; x++) drops[x] = 1;
   function drawMatrix() {
-    ctx.fillStyle = 'rgba(10, 27, 53, 0.1)';
+    ctx.fillStyle = 'rgba(5, 20, 100, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00E5FF';
+    /* Alternating purple/lavanda tones for depth */
+    const colors = ['#BC86FF', '#5504D5', '#B1A0FE', '#468DFC'];
     ctx.font = fontSize + 'px monospace';
     for(let i = 0; i < drops.length; i++) {
       const text = letters.charAt(Math.floor(Math.random() * letters.length));
+      ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+      ctx.globalAlpha = 0.6 + Math.random() * 0.4;
       ctx.fillText(text, i * fontSize, drops[i] * fontSize);
       if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
       drops[i]++;
     }
+    ctx.globalAlpha = 1;
   }
   matrixInterval = setInterval(drawMatrix, 33);
   window.addEventListener('resize', () => {
@@ -172,8 +176,11 @@ reveals.forEach(r=>observer.observe(r));
 const navbar=document.getElementById('navbar');
 window.addEventListener('scroll',()=>{
   navbar.style.background=window.scrollY>60
-    ?'rgba(4,17,31,0.98)'
-    :'rgba(4,17,31,0.85)';
+    ?'rgba(5,20,100,0.97)'
+    :'rgba(5,20,100,0.75)';
+  navbar.style.borderBottomColor=window.scrollY>60
+    ?'rgba(188,134,255,0.18)'
+    :'rgba(188,134,255,0.12)';
 });
 
 /* ─── ACTIVE NAV HIGHLIGHTING ─── */
@@ -194,4 +201,3 @@ const navObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.25, rootMargin: '-68px 0px -30% 0px' });
 sections.forEach(sec => navObserver.observe(sec));
-
