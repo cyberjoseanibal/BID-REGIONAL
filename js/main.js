@@ -1,4 +1,4 @@
-/* ─── MATRIX BACKGROUND — SGC R.12 MR 2026 ─── */
+
 const canvas = document.getElementById('matrixCanvas');
 let ctx, matrixInterval;
 if (canvas) {
@@ -13,7 +13,7 @@ if (canvas) {
   function drawMatrix() {
     ctx.fillStyle = 'rgba(5, 20, 100, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    /* Alternating purple/lavanda tones for depth */
+    
     const colors = ['#BC86FF', '#5504D5', '#B1A0FE', '#468DFC'];
     ctx.font = fontSize + 'px monospace';
     for(let i = 0; i < drops.length; i++) {
@@ -33,7 +33,6 @@ if (canvas) {
   });
 }
 
-/* ─── PARTICLES ─── */
 const particlesEl = document.getElementById('particles');
 for(let i=0;i<35;i++){
   const p = document.createElement('div');
@@ -45,7 +44,6 @@ for(let i=0;i<35;i++){
   particlesEl.appendChild(p);
 }
 
-/* ─── INTRO ─── */
 if (window.location.hash) {
   history.replaceState(null, null, window.location.pathname + window.location.search);
 }
@@ -97,7 +95,6 @@ function runScan(){
   }, 15);
 }
 
-/* ─── TYPING EFFECT ─── */
 const titleEl = document.getElementById('type-target');
 if (titleEl) {
   const originalText = titleEl.textContent;
@@ -119,7 +116,6 @@ introFp.addEventListener('click',()=>{
   runScan();
 });
 
-/* Touch support */
 introFp.addEventListener('touchstart',(e)=>{
   e.preventDefault();
   if(fpStatus) fpStatus.textContent='Escaneando...';
@@ -132,14 +128,13 @@ skipBtn.addEventListener('click', () => {
   skipBtn.style.pointerEvents='none';
   runScan();
 });
-// Force scroll to top on load and prevent browser auto-scroll restoration
+
 if (history.scrollRestoration) {
   history.scrollRestoration = 'manual';
 }
 window.scrollTo(0, 0);
 document.body.style.overflow='hidden';
 
-/* ─── HERO FP INTERACTION ─── */
 const heroFp=document.getElementById('heroFp');
 heroFp.addEventListener('click',()=>{
   heroFp.classList.add('scanning');
@@ -151,7 +146,6 @@ heroFp.addEventListener('touchstart',(e)=>{
   setTimeout(()=>heroFp.classList.remove('scanning'),1600);
 },{passive:false});
 
-/* ─── HAMBURGER ─── */
 const hamburger=document.getElementById('hamburger');
 const mobileMenu=document.getElementById('mobileMenu');
 hamburger.addEventListener('click',()=>{
@@ -168,7 +162,6 @@ if (mobileMenu) {
   });
 }
 
-/* ─── SCROLL REVEAL ─── */
 const reveals=document.querySelectorAll('.reveal');
 const observer=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
@@ -177,7 +170,6 @@ const observer=new IntersectionObserver((entries)=>{
 },{threshold:0.12});
 reveals.forEach(r=>observer.observe(r));
 
-/* ─── NAV SCROLL STYLE ─── */
 const navbar=document.getElementById('navbar');
 window.addEventListener('scroll',()=>{
   navbar.style.background=window.scrollY>60
@@ -188,7 +180,6 @@ window.addEventListener('scroll',()=>{
     :'rgba(188,134,255,0.12)';
 });
 
-/* ─── ACTIVE NAV HIGHLIGHTING ─── */
 const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
 const sections = document.querySelectorAll('section[id]');
 const navObserver = new IntersectionObserver((entries) => {

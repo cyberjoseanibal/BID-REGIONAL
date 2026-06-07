@@ -1,7 +1,3 @@
-/* ═══════════════════════════════════════
-   PILARES / EJES — SGC R.12 MR 2026
-   Glassmorphism + 3D Glow Cards
-═══════════════════════════════════════ */
 #pilares{background:var(--midnight);position:relative;overflow:hidden}
 #pilares::before{
   content:'';position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);

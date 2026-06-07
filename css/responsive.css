@@ -1,9 +1,3 @@
-/* ═══════════════════════════════════════
-   RESPONSIVE — SGC R.12 MR 2026
-   Optimized for mobile + PC
- ═══════════════════════════════════════ */
-
-/* ─── TABLET (max 900px) ─── */
 @media(max-width:900px){
   .propuesta-grid,
   .mision-grid,
@@ -18,11 +12,8 @@
   .galeria-item.secondary{grid-column:span 6}
   .secretaria-grid{grid-template-columns:repeat(2, 1fr)}
   .secretaria-card.featured{max-width:100%}
-  
-  /* Reduce section padding on tablet */
   section{padding:clamp(32px,5vw,60px) clamp(16px,4vw,40px)}
 }
-
 .hero-mobile-overlay {
   display: none;
   position: absolute;
@@ -31,10 +22,7 @@
   background: linear-gradient(to bottom, rgba(5,20,100,0.6), rgba(32,13,87,0.8));
   pointer-events: none;
 }
-
-/* ─── MOBILE (max 600px) ─── */
 @media(max-width:600px){
-  /* Intro compact for mobile */
   .intro-title{font-size: clamp(3.6rem, 16vw, 6rem) !important; letter-spacing: 0.02em;}
   .intro-title-gold{font-size: 1.8rem !important; letter-spacing: 0.15em !important;}
   .intro-subtitle-italic {
@@ -57,13 +45,11 @@
   .intro-divider{margin: 12px 0 !important;}
   .intro-enter-btn { padding: 12px 32px; font-size: 14px; }
   .intro-year { font-size: 9px; margin-top: 14px; }
-  
   .hero-mobile-overlay { display: block; }
   .hero-bg video { 
     object-position: center; 
     filter: brightness(0.75) saturate(1.2) contrast(1.05);
   }
-  /* Fallback: if the video is blocked or loading, make sure the background container shows the poster image styled correctly */
   .hero-bg {
     background: url('../MULTIMEDIA/video_placeholder.webp') no-repeat center center;
     background-size: cover;
@@ -71,11 +57,7 @@
   .hero-content{padding-bottom: 50px;}
   .hero-scroll{bottom: 12px;}
   .scroll-line{height: 25px;}
-  
-  /* Reduce all section padding on mobile */
   section { padding: clamp(28px,5vw,48px) 16px !important; }
-  
-  /* Hero CTA Mobile alignment */
   .hero-cta-row {
     flex-direction: column;
     align-items: center;
@@ -93,8 +75,6 @@
     padding: 12px 20px;
     font-size: 12px;
   }
-
-  /* Mobile BID Button */
   .btn-bid {
     width: 100%;
     max-width: 320px;
@@ -105,15 +85,11 @@
   .btn-bid:hover {
     letter-spacing: 0.17em;
   }
-
-  /* Hero title smaller on mobile */
   .hero-title { font-size: clamp(1.8rem, 8vw, 3rem) !important; }
   .hero-title span { font-size: clamp(1.4rem, 6vw, 2.5rem) !important; }
   .hero-tagline { font-size: 0.9rem; }
   .hero-fp { width: 120px !important; height: 120px !important; }
   .tap-hint { font-size: 8px; margin-top: -4px; }
-
-  /* Mobile menu animations and scrolling */
   .mobile-menu {
     max-height: calc(100vh - var(--nav-h));
     overflow-y: auto;
@@ -141,11 +117,8 @@
   .mobile-menu.open a:nth-child(6) { transition-delay: 0.3s; }
   .mobile-menu.open a:nth-child(7) { transition-delay: 0.35s; }
   .mobile-menu.open a:nth-child(8) { transition-delay: 0.4s; }
-
-  /* Grid adaptations for mobile */
   .pilares-grid{grid-template-columns:1fr; gap: 16px;}
   .pilar-card { padding: 24px 20px; }
-  
   .equipo-grid {
     grid-template-columns: 1fr;
     max-width: 300px;
@@ -155,7 +128,6 @@
   .miembro-card {
     padding: 24px 20px;
   }
-  
   .galeria-grid {
     grid-template-columns: 1fr;
     display: flex;
@@ -167,13 +139,10 @@
     grid-column: auto;
     aspect-ratio: 16/10;
   }
-  
   .mision-grid { gap: 16px; }
   .mv-card{padding:22px 18px}
   .mv-title { font-size: 1.1rem; }
-  
   footer{flex-direction:column;text-align:center; gap: 14px; padding: 28px 16px !important;}
-  
   .secretaria-grid{grid-template-columns:1fr; gap: 18px;}
   .secretaria-card-info {
     padding: 16px;
@@ -182,28 +151,18 @@
   .secretaria-card.featured .secretaria-card-img {
     aspect-ratio: 3/4;
   }
-
-  /* Propuesta mobile */
   #propuesta { padding-top: 40px !important; }
   .propuesta-img-wrap { max-width: 280px; }
-  
-  /* Regional mobile */
   .info-item { padding: 12px; }
   .regional-img { margin-top: 16px; }
-  
-  /* Section headers tighter on mobile */
   .secretaria-header,
   .pilares-header,
   .galeria-header,
   .mision-header { margin-bottom: clamp(16px, 3vw, 28px) !important; }
   .section-title { font-size: clamp(1.3rem, 5vw, 2rem) !important; margin-bottom: 10px; }
   .section-desc { font-size: 0.85rem; }
-  
-  /* Hide lateral images on small screens */
   .hero-lateral { display: none; }
 }
-
-/* ─── VERY SMALL (max 380px) ─── */
 @media(max-width:380px){
   .intro-title { font-size: 2.8rem !important; }
   .intro-title-gold { font-size: 1.2rem !important; }

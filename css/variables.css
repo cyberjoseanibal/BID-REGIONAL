@@ -1,24 +1,15 @@
-/* ═══════════════════════════════════════
-   VARIABLES & RESET — SGC R.12 MR 2026
-   Identidad Visual: Futurista · Moderno · Limpio · De calidad
-═══════════════════════════════════════ */
 :root {
-  /* ─── PALETA PRINCIPAL ─── */
-  --midnight:    #051464;   /* Azul Medianoche — fondo primario */
-  --royal:       #2228E5;   /* Azul Royal Vibrante — acento principal */
-  --lavanda:     #BC86FF;   /* Nude Lavanda — acento suave */
-  --neon-purple: #5504D5;   /* Púrpura Neón — glow y detalles 3D */
-  --imperial:    #200D57;   /* Morado Imperial — fondo secundario */
-
-  /* ─── EXTRAS DE APOYO ─── */
-  --sky:         #468DFC;   /* Azul cielo brillante */
-  --soft-lav:    #B1A0FE;   /* Lavanda suave */
-  --white:       #FFFFFF;   /* Blanco puro */
-  --deep-blue:   #1E2282;   /* Azul profundo */
-  --light-gray:  #F3F3F3;   /* Gris claro */
-  --black:       #000000;   /* Negro puro */
-
-  /* ─── ALIASES SEMÁNTICOS ─── */
+  --midnight:    #051464;   
+  --royal:       #2228E5;   
+  --lavanda:     #BC86FF;   
+  --neon-purple: #5504D5;   
+  --imperial:    #200D57;   
+  --sky:         #468DFC;   
+  --soft-lav:    #B1A0FE;   
+  --white:       #FFFFFF;   
+  --deep-blue:   #1E2282;   
+  --light-gray:  #F3F3F3;   
+  --black:       #000000;   
   --navy:        #051464;
   --navy2:       #0A0E4A;
   --navy3:       #120B5E;
@@ -49,16 +40,10 @@ body{
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 button{cursor:pointer;font-family:inherit;border:none;background:none}
-
-/* ═══════════════════════════════════════
-   SCROLLBAR — Tema Púrpura
-═══════════════════════════════════════ */
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:var(--midnight)}
 ::-webkit-scrollbar-thumb{background:linear-gradient(180deg, var(--neon-purple), var(--royal));border-radius:3px}
 ::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg, var(--lavanda), var(--neon-purple))}
-
-/* Custom Selection */
 ::selection {
   background: var(--lavanda);
   color: var(--midnight);

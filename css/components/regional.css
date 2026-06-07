@@ -1,6 +1,3 @@
-/* ═══════════════════════════════════════
-   REGIONAL / MAPA — SGC R.12 MR 2026
-═══════════════════════════════════════ */
 #regional{
   background:linear-gradient(135deg, var(--navy2) 0%, var(--imperial) 50%, var(--midnight) 100%);
   position:relative;overflow:hidden;
