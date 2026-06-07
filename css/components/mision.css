@@ -31,9 +31,14 @@
     0 0 25px rgba(85,4,213,0.15);
 }
 .mv-card::after{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  content:'';position:absolute;top:0;left:50%;right:50%;height:2px;
   background:linear-gradient(90deg,transparent,var(--lavanda),var(--neon-purple),var(--lavanda),transparent);
   box-shadow:0 0 10px rgba(188,134,255,0.3);
+  transition: left 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.mv-card:hover::after{
+  left:0;
+  right:0;
 }
 .mv-card.vision::after{
   background:linear-gradient(90deg,transparent,var(--sky),var(--royal),var(--sky),transparent);
@@ -44,10 +49,21 @@
   box-shadow:0 0 10px rgba(188,134,255,0.3);
 }
 .mv-label{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:0.45em;color:var(--lavanda);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.mv-label svg {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+}
+.mv-card:hover .mv-label svg {
+  transform: scale(1.2) rotate(15deg);
+  filter: drop-shadow(0 0 6px var(--lavanda));
+}
 .mv-card.vision .mv-label{color:var(--sky)}
+.mv-card.vision:hover .mv-label svg {
+  filter: drop-shadow(0 0 6px var(--sky));
+}
 .mv-card.valores .mv-label{color:var(--lavanda)}
 .mv-title{font-family:'Orbitron',monospace;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--white);margin-bottom:16px}
-.mv-text{font-size:0.95rem;color:var(--dim);line-height:1.75}
+.mv-text{font-size:0.95rem;color:var(--dim);line-height:1.75;transition:color 0.3s ease}
+.mv-card:hover .mv-text{color:var(--white)}
 .mv-values-list {
   list-style: none;
   padding: 0;
@@ -64,10 +80,25 @@
   font-size: 1.05rem;
   font-weight: 500;
   color: var(--dim);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.3s ease;
 }
+.mv-card:hover .mv-value-item {
+  color: var(--white);
+}
+.mv-card:hover .mv-value-item:nth-child(1) { transform: translateX(6px); }
+.mv-card:hover .mv-value-item:nth-child(2) { transform: translateX(6px); transition-delay: 0.04s; }
+.mv-card:hover .mv-value-item:nth-child(3) { transform: translateX(6px); transition-delay: 0.08s; }
+.mv-card:hover .mv-value-item:nth-child(4) { transform: translateX(6px); transition-delay: 0.12s; }
+.mv-card:hover .mv-value-item:nth-child(5) { transform: translateX(6px); transition-delay: 0.16s; }
+
 .mv-value-item svg {
   color: var(--lavanda);
   filter: drop-shadow(0 0 5px rgba(188, 134, 255, 0.5));
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+}
+.mv-card:hover .mv-value-item svg {
+  transform: scale(1.25);
+  filter: drop-shadow(0 0 8px var(--lavanda));
 }
 .mv-meta {
   margin-top: auto;
@@ -80,6 +111,10 @@
   color: var(--soft-lav);
   text-transform: uppercase;
   opacity: 0.8;
+  transition: border-color 0.3s ease;
+}
+.mv-card:hover .mv-meta {
+  border-top-color: rgba(188, 134, 255, 0.25);
 }
 .mision-header{text-align:center;margin-bottom:clamp(24px,4vw,48px)}
 .mision-header .section-label{justify-content:center}
