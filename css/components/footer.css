@@ -19,16 +19,22 @@ footer{
   border-top: 1px solid rgba(188, 134, 255, 0.08);
   padding: 20px 16px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 8px 12px;
+  gap: 10px;
   font-family: 'Rajdhani', sans-serif;
   font-size: 12px;
   letter-spacing: 0.15em;
   color: var(--dim);
   text-transform: uppercase;
   backdrop-filter: blur(10px);
+}
+.sub-footer-creators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
 }
 .sub-footer-text {
   opacity: 0.75;
@@ -63,4 +69,12 @@ footer{
   color: var(--soft-lav);
   opacity: 0.6;
   font-weight: 400;
+}
+.sub-footer-region {
+  font-family: 'Orbitron', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: rgba(188, 134, 255, 0.55);
+  text-shadow: 0 0 8px rgba(188, 134, 255, 0.2);
+  margin-top: 2px;
 }
