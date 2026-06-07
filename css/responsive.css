@@ -68,11 +68,13 @@
   }
   .hero-cta-row .btn-primary,
   .hero-cta-row .btn-outline,
+  .hero-cta-row .btn-bid-regional,
   .hero-cta-row .btn-instagram {
     width: 100%;
     justify-content: center;
     text-align: center;
-    padding: 12px 20px;
+    height: 46px;
+    padding: 0 20px;
     font-size: 12px;
   }
   .btn-bid {

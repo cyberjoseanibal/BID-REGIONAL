@@ -166,8 +166,10 @@
 .btn-bid-regional {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 14px 34px;
+  height: 48px;
+  padding: 0 32px;
   background: linear-gradient(135deg, var(--neon-purple), var(--royal));
   border: 1px solid rgba(188, 134, 255, 0.4);
   border-radius: 6px;
@@ -182,6 +184,7 @@
     0 4px 20px rgba(85, 4, 213, 0.4),
     0 0 30px rgba(85, 4, 213, 0.1);
   text-decoration: none;
+  box-sizing: border-box;
 }
 .btn-bid-regional:hover {
   background: linear-gradient(135deg, var(--lavanda), var(--neon-purple));
@@ -219,11 +222,12 @@
   transform:translateY(-2px);border-color:var(--lavanda);
 }
 .btn-instagram{
-  display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:6px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 28px;border-radius:6px;
   font-family:'Rajdhani',sans-serif;font-size:clamp(12px,1.5vw,14px);font-weight:700;
   letter-spacing:0.2em;text-transform:uppercase;color:#fff;
   background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   transition:all 0.3s;box-shadow:0 4px 20px rgba(225, 48, 108, 0.25);text-decoration:none;
+  box-sizing:border-box;
 }
 .btn-instagram:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(225, 48, 108, 0.5);filter:brightness(1.1);color:#fff}
 .btn-instagram svg{width:18px;height:18px}
