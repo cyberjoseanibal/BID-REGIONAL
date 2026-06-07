@@ -310,3 +310,25 @@
   text-transform: uppercase;
   margin-top: 18px;
 }
+.intro-credits {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(188, 134, 255, 0.4);
+  text-transform: uppercase;
+  margin-top: 14px;
+  text-align: center;
+  z-index: 10;
+}
+.intro-credits span {
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.intro-credits span:hover {
+  color: var(--lavanda);
+  text-shadow: 0 0 10px rgba(188, 134, 255, 0.8);
+}
