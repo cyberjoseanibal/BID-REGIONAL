@@ -14,8 +14,10 @@
   background: linear-gradient(135deg, #051464 0%, #200D57 40%, #0A0E4A 100%);
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
+  gap: 0;
   transition: transform 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53), opacity 0.8s ease, filter 0.8s ease;
   overflow:hidden;
+  padding: 20px;
 }
 #intro-overlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
 
@@ -53,14 +55,41 @@
   z-index: 1;
 }
 
+/* ─── SGC BADGE ─── */
+.intro-badge {
+  font-family:'Orbitron',monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: var(--lavanda);
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border: 1px solid rgba(188,134,255,0.25);
+  border-radius: 100px;
+  background: rgba(85,4,213,0.1);
+  margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.intro-badge::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--lavanda);
+  box-shadow: 0 0 6px var(--lavanda);
+  animation: ping 2s ease-in-out infinite;
+}
+@keyframes ping{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:0.4}}
+
 .intro-label-top{
   font-family:'Orbitron',monospace;
-  font-size:clamp(12px,1.8vw,16px);
+  font-size:clamp(11px,1.6vw,15px);
   letter-spacing:0.2em;
   color: var(--lavanda);
   text-transform:uppercase;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-top: 14px;
+  margin-bottom: 6px;
   font-weight: 700;
   text-align: center;
   text-shadow: 0 0 12px rgba(188,134,255,0.6), 0 0 30px rgba(85,4,213,0.3);
@@ -85,7 +114,7 @@
 
 .intro-title{
   font-family:'Orbitron',monospace;
-  font-size:clamp(5rem,12vw,10rem);
+  font-size:clamp(4.5rem,11vw,9rem);
   font-weight:900;
   letter-spacing:0.05em;
   background: linear-gradient(180deg, #FFFFFF 0%, #D8C4FF 40%, #BC86FF 100%);
@@ -99,37 +128,37 @@
 
 .intro-title-gold {
   font-family:'Orbitron',monospace;
-  font-size:clamp(2rem,6vw,4.5rem);
+  font-size:clamp(1.8rem,5.5vw,4rem);
   font-weight:700;
   letter-spacing:0.3em;
   color:transparent;
   -webkit-text-stroke: 1.5px var(--lavanda);
-  margin-top: 5px;
+  margin-top: 4px;
   text-align: center;
   text-shadow: 0 0 20px rgba(188,134,255,0.4), 0 0 40px rgba(85,4,213,0.2);
 }
 
 .intro-subtitle-italic {
   font-family:'Rajdhani',sans-serif;
-  font-size:clamp(1.1rem,2.5vw,1.6rem);
+  font-size:clamp(0.85rem,2vw,1.3rem);
   font-weight: 600;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.3em;
   color: #D8C4FF;
-  margin-top: 25px;
+  margin-top: 16px;
   text-align: center;
   text-transform: uppercase;
   background: rgba(85,4,213,0.12);
   border: 1px solid rgba(188,134,255,0.3);
-  padding: 8px 24px;
+  padding: 6px 20px;
   border-radius: 4px;
   box-shadow: inset 0 0 15px rgba(85,4,213,0.15), 0 0 20px rgba(85,4,213,0.1);
 }
 
 .intro-divider {
-  width: 60px;
+  width: 50px;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--neon-purple), var(--lavanda), var(--neon-purple), transparent);
-  margin: 30px 0;
+  margin: 16px 0;
 }
 
 .intro-candidate {
@@ -138,23 +167,23 @@
   letter-spacing: 0.3em;
   color: var(--soft-lav);
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 /* ─── FINGERPRINT (INTRO) ─── */
 .fp-wrap{
   position:relative;
-  width:240px;height:240px;
+  width:200px;height:200px;
   display:flex;align-items:center;justify-content:center;
-  margin-bottom: 25px;
+  margin-bottom: 12px;
 }
 /* Outer rotating dashed ring (CW) */
 .fp-wrap::before {
   content: '';
   position: absolute;
-  width: 210px;
-  height: 210px;
+  width: 180px;
+  height: 180px;
   border: 1.5px dashed rgba(188,134,255,0.45);
   border-radius: 50%;
   animation: rotate-cw 25s linear infinite;
@@ -165,8 +194,8 @@
 .fp-wrap::after {
   content: '';
   position: absolute;
-  width: 190px;
-  height: 190px;
+  width: 165px;
+  height: 165px;
   border: 1px double rgba(85,4,213,0.35);
   border-radius: 50%;
   animation: rotate-ccw 15s linear infinite;
@@ -187,7 +216,7 @@
   position:relative;
   z-index:2;
   cursor:pointer;
-  width: 170px; height: 170px;
+  width: 145px; height: 145px;
   border-radius: 50%;
   border: 2px solid rgba(188,134,255,0.6);
   box-shadow: 
@@ -272,22 +301,34 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 30px;
-  background: rgba(85,4,213,0.2);
-  border: 1px solid rgba(188,134,255,0.4);
+  padding: 14px 36px;
+  background: linear-gradient(135deg, rgba(85,4,213,0.35), rgba(34,40,229,0.3));
+  border: 1px solid rgba(188,134,255,0.45);
   border-radius: 40px;
   font-family: 'Rajdhani', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  color: #D8C4FF;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #FFFFFF;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(85,4,213,0.15);
+  box-shadow: 0 0 20px rgba(85,4,213,0.2), 0 4px 16px rgba(0,0,0,0.3);
 }
 .intro-enter-btn:hover {
-  background: rgba(85,4,213,0.5);
+  background: linear-gradient(135deg, rgba(85,4,213,0.6), rgba(34,40,229,0.5));
   border-color: var(--lavanda);
-  box-shadow: 0 0 30px rgba(85,4,213,0.4), 0 0 60px rgba(188,134,255,0.15);
+  box-shadow: 0 0 30px rgba(85,4,213,0.4), 0 0 60px rgba(188,134,255,0.15), 0 6px 20px rgba(0,0,0,0.4);
   color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ─── MR 2026 Year indicator ─── */
+.intro-year {
+  font-family: 'Orbitron', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  color: rgba(188,134,255,0.35);
+  text-transform: uppercase;
+  margin-top: 18px;
 }

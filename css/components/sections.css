@@ -38,17 +38,18 @@
 
 /* ═══════════════════════════════════════
    SECTIONS GENERAL — SGC R.12 MR 2026
+   Reduced padding for tighter layout
 ═══════════════════════════════════════ */
-section{padding:clamp(60px,10vw,110px) clamp(20px,6vw,80px)}
+section{padding:clamp(40px,7vw,80px) clamp(16px,5vw,60px)}
 .section-label{
   font-family:'Orbitron',monospace;font-size:10px;letter-spacing:0.45em;
-  color:var(--lavanda);text-transform:uppercase;margin-bottom:12px;
+  color:var(--lavanda);text-transform:uppercase;margin-bottom:10px;
   display:flex;align-items:center;gap:12px;
 }
 .section-label::before{content:'';width:24px;height:2px;background:linear-gradient(90deg, var(--neon-purple), var(--lavanda));border-radius:1px;box-shadow:0 0 6px rgba(188,134,255,0.3)}
-.section-title{font-family:'Orbitron',monospace;font-size:clamp(1.6rem,4vw,3rem);font-weight:700;letter-spacing:0.05em;color:var(--white);line-height:1.15;margin-bottom:16px}
+.section-title{font-family:'Orbitron',monospace;font-size:clamp(1.5rem,3.5vw,2.8rem);font-weight:700;letter-spacing:0.05em;color:var(--white);line-height:1.15;margin-bottom:14px}
 .section-title span{
   background:linear-gradient(135deg, var(--lavanda), var(--sky));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.section-desc{font-size:clamp(0.95rem,1.5vw,1.1rem);color:var(--dim);line-height:1.7;max-width:600px}
+.section-desc{font-size:clamp(0.9rem,1.4vw,1.05rem);color:var(--dim);line-height:1.7;max-width:580px}
