@@ -15,18 +15,52 @@ footer{
 .footer-center span{font-size:10px;opacity:0.5}
 .footer-right{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(139,125,184,0.5);text-transform:uppercase}
 .sub-footer {
-  background: var(--navy2);
-  border-top: 1px solid rgba(188, 134, 255, 0.04);
-  padding: 18px 20px;
-  text-align: center;
+  background: rgba(5, 12, 50, 0.7);
+  border-top: 1px solid rgba(188, 134, 255, 0.08);
+  padding: 20px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
   font-family: 'Rajdhani', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.15em;
   color: var(--dim);
   text-transform: uppercase;
+  backdrop-filter: blur(10px);
 }
-.sub-footer span {
-  color: var(--lavanda);
+.sub-footer-text {
+  opacity: 0.75;
+}
+.sub-footer .creator {
+  color: var(--white);
   font-weight: 600;
   text-shadow: 0 0 8px rgba(188, 134, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+.sub-footer .creator::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--lavanda), var(--sky));
+  transition: width 0.3s ease;
+}
+.sub-footer .creator:hover {
+  color: var(--lavanda);
+  text-shadow: 0 0 15px rgba(188, 134, 255, 0.8);
+}
+.sub-footer .creator:hover::after {
+  width: 100%;
+}
+.sub-footer .creator-separator {
+  color: var(--soft-lav);
+  opacity: 0.6;
+  font-weight: 400;
 }
