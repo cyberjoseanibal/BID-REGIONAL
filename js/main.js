@@ -1,11 +1,11 @@
 /* ─── MATRIX BACKGROUND — SGC R.12 MR 2026 ─── */
 const canvas = document.getElementById('matrixCanvas');
-const ctx = canvas.getContext('2d');
-let matrixInterval;
+let ctx, matrixInterval;
 if (canvas) {
+  ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  const letters = '0101010101ABCDEFGHIJKLMNOPQRSTUVWXYZ$+-*/=%""\\'#&_(),.;:?!\\|{}<>[]^~';
+  const letters = "0101010101ABCDEFGHIJKLMNOPQRSTUVWXYZ$+-*/=%#&_(),.;:?!|{}<>[]^~";
   const fontSize = 14;
   const columns = canvas.width / fontSize;
   const drops = [];
