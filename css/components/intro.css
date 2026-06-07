@@ -312,17 +312,19 @@
 }
 .intro-credits {
   font-family: 'Rajdhani', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.15em;
-  color: rgba(188, 134, 255, 0.4);
+  color: var(--soft-lav);
   text-transform: uppercase;
-  margin-top: 14px;
+  margin-top: 22px;
   text-align: center;
   z-index: 10;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
 }
 .intro-credits span {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--white);
   font-weight: 600;
+  text-shadow: 0 0 8px rgba(188, 134, 255, 0.7), 0 2px 4px rgba(0, 0, 0, 0.9);
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
@@ -330,5 +332,5 @@
 }
 .intro-credits span:hover {
   color: var(--lavanda);
-  text-shadow: 0 0 10px rgba(188, 134, 255, 0.8);
+  text-shadow: 0 0 15px var(--lavanda), 0 2px 4px rgba(0, 0, 0, 0.9);
 }
