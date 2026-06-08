@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="css/components/galeria.css">
 <link rel="stylesheet" href="css/components/secretaria.css">
 <link rel="stylesheet" href="css/components/regional.css">
+<link rel="stylesheet" href="css/components/gemas.css">
 <link rel="stylesheet" href="css/components/cta.css">
 <link rel="stylesheet" href="css/components/footer.css">
 <link rel="stylesheet" href="css/animations.css">
@@ -89,10 +90,11 @@
     <li><a href="#hero">Inicio</a></li>
     <li><a href="#propuesta">La Propuesta</a></li>
     <li><a href="#secretaria">Secretaría General</a></li>
+    <li><a href="#gemas">Gemas &amp; Comisiones</a></li>
+    <li><a href="#equipo">El Equipo</a></li>
     <li><a href="#galeria">Galería</a></li>
     <li><a href="#pilares">Pilares</a></li>
     <li><a href="#mision">Misión</a></li>
-
     <li><a href="#regional">Regional 12</a></li>
   </ul>
   <div class="hamburger" id="hamburger">
@@ -105,6 +107,8 @@
   <a href="#hero" onclick="closeMobile()">Inicio</a>
   <a href="#propuesta" onclick="closeMobile()">La Propuesta</a>
   <a href="#secretaria" onclick="closeMobile()">Secretaría General</a>
+  <a href="#gemas" onclick="closeMobile()">Gemas &amp; Comisiones</a>
+  <a href="#equipo" onclick="closeMobile()">El Equipo</a>
   <a href="#galeria" onclick="closeMobile()">Galería</a>
   <a href="#pilares" onclick="closeMobile()">Pilares</a>
   <a href="#mision" onclick="closeMobile()">Misión</a>
@@ -220,6 +224,10 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
           ACCEDER AL BID
         </a>
+        <button type="button" id="openWelcomeBtn" class="btn-bid secondary-cta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          CARTA DE BIENVENIDA
+        </button>
       </div>
     </div>
 
@@ -231,11 +239,11 @@
   <div class="secretaria-header">
     <div class="section-label">Liderazgo & Gestión</div>
     <h2 class="section-title reveal">Secretaría <span>General</span></h2>
-    <p class="section-desc reveal reveal-delay-1">Conoce oficialmente a las tres personas que guiarán el timón de este Modelo Regional 2026 de la Regional 12. Visión estratégica, excelencia académica y ejecución logística — todo en un solo equipo.</p>
+    <p class="section-desc reveal reveal-delay-1">Conoce oficialmente a las tres personas que guiarán el timón de este Modelo Regional 2026 de la Regional 12. Visión estratégica, excelencia académica y ejecución logística — todo en un solo equipo. Toca sobre una de ellas para ver su perfil completo.</p>
   </div>
   <div class="secretaria-grid">
     <!-- Card 1: Secretaría General -->
-    <div class="secretaria-card reveal">
+    <div class="secretaria-card reveal" data-profile="sg">
       <div class="secretaria-card-num">01</div>
       <div class="secretaria-card-img">
         <img src="MULTIMEDIA/secretaria_general.webp" alt="Arleen De Oca — Secretaría General" loading="lazy">
@@ -246,7 +254,7 @@
       </div>
     </div>
     <!-- Card 2: Secretaría General Académica -->
-    <div class="secretaria-card reveal reveal-delay-1">
+    <div class="secretaria-card reveal reveal-delay-1" data-profile="sga">
       <div class="secretaria-card-num">02</div>
       <div class="secretaria-card-img">
         <img src="MULTIMEDIA/secretaria_academica.webp" alt="Cesarina Santana — Secretaría General Académica" loading="lazy">
@@ -257,7 +265,7 @@
       </div>
     </div>
     <!-- Card 3: Secretaría General Logística -->
-    <div class="secretaria-card reveal reveal-delay-2">
+    <div class="secretaria-card reveal reveal-delay-2" data-profile="sgl">
       <div class="secretaria-card-num">03</div>
       <div class="secretaria-card-img">
         <img src="MULTIMEDIA/secretaria_logistica.webp" alt="Cindy Ubiera — Secretaría General Logística" loading="lazy">
@@ -267,7 +275,459 @@
         <div class="secretaria-card-role">General Logística</div>
       </div>
     </div>
+  </div>
 
+  <!-- Galería Histórica -->
+  <div class="gallery-past-title reveal">Galería Histórica de Secretarios Generales</div>
+  <div class="gallery-past-grid">
+    <div class="gallery-past-card reveal">
+      <span class="past-card-year">MR2022 R12</span>
+      <div class="past-card-name">Kiojeidy Alvarez</div>
+      <div class="past-card-role">Ex-Secretaria General</div>
+    </div>
+    <div class="gallery-past-card reveal reveal-delay-1">
+      <span class="past-card-year">MR2023 R12</span>
+      <div class="past-card-name">Farleny Candelario</div>
+      <div class="past-card-role">Ex-Secretaria General</div>
+    </div>
+    <div class="gallery-past-card reveal reveal-delay-2">
+      <span class="past-card-year">MR2024 R12</span>
+      <div class="past-card-name">Yaniel Martinez</div>
+      <div class="past-card-role">Ex-Secretario General</div>
+    </div>
+    <div class="gallery-past-card reveal reveal-delay-3">
+      <span class="past-card-year">MR2025 R12</span>
+      <div class="past-card-name">Kervin E. Díaz</div>
+      <div class="past-card-role">Ex-Secretario General</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LAS GEMAS DEL MR2026 ═══ -->
+<section id="gemas">
+  <div class="gemas-header">
+    <div class="section-label">Oferta Académica</div>
+    <h2 class="section-title reveal">Las Gemas del <span>MR2026</span></h2>
+    <p class="section-desc reveal reveal-delay-1">Nuestra propuesta académica se estructura en cuatro ejes estratégicos, representados por gemas. Cada gema agrupa comisiones diseñadas para que los delegados asuman roles de liderazgo y debatan soluciones a problemáticas globales reales.</p>
+  </div>
+  
+  <div class="gemas-grid">
+    <!-- Gem 1: Zafiro -->
+    <div class="gem-card gem-zafiro reveal">
+      <div class="gem-card-header">
+        <div class="gem-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"></path></svg>
+        </div>
+        <div class="gem-card-meta">
+          <span class="gem-card-tag">Zafiro</span>
+          <h3 class="gem-card-title">Justicia</h3>
+        </div>
+      </div>
+      <p class="gem-card-desc">Simboliza la sabiduría, verdad y legalidad. Enfocado en la resolución pacífica de controversias y el respeto por el derecho internacional.</p>
+      
+      <div class="gem-committees">
+        <!-- Committee: CSNU -->
+        <div class="committee-accordion">
+          <div class="committee-header">
+            <span>CSNU</span>
+            <span class="committee-arrow">▼</span>
+          </div>
+          <div class="committee-body">
+            <div class="committee-content">
+              <div class="committee-topic">
+                <span class="committee-label">Comisión</span>
+                <span class="committee-topic-text">Consejo de Seguridad de las Naciones Unidas</span>
+              </div>
+              <div class="committee-topic">
+                <span class="committee-label">Tema de Debate</span>
+                <span class="committee-topic-text">Evaluación de la reforma del derecho de veto ante crisis humanitarias en conflictos armados contemporáneos.</span>
+              </div>
+              <div class="committee-team">
+                <span class="committee-label">Mesa Directiva</span>
+                <div class="committee-member">
+                  <span class="committee-member-name">Rainer Bernabel</span>
+                  <span class="committee-member-role">Director General</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Bielka C. Álvarez</span>
+                  <span class="committee-member-role">Directora Adjunta</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Leonardo Saviñon</span>
+                  <span class="committee-member-role">Director Adjunto</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Benny Jazmín Ozuna De Oleo</span>
+                  <span class="committee-member-role">Evaluación y Control</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Committee: CIJ -->
+        <div class="committee-accordion">
+          <div class="committee-header">
+            <span>CIJ</span>
+            <span class="committee-arrow">▼</span>
+          </div>
+          <div class="committee-body">
+            <div class="committee-content">
+              <div class="committee-topic">
+                <span class="committee-label">Comisión</span>
+                <span class="committee-topic-text">Corte Internacional de Justicia</span>
+              </div>
+              <div class="committee-topic">
+                <span class="committee-label">Tema de Debate</span>
+                <span class="committee-topic-text">Disputa territorial entre Guyana y Venezuela sobre el Esequibo.</span>
+              </div>
+              <div class="committee-team">
+                <span class="committee-label">Mesa Directiva</span>
+                <div class="committee-member">
+                  <span class="committee-member-name">Stainy Cristina Luna</span>
+                  <span class="committee-member-role">Juez Presidente</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Dalbert Poueriet Mariano</span>
+                  <span class="committee-member-role">Juez Vicepresidente</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Katherine Sánchez Febles</span>
+                  <span class="committee-member-role">Secretaria</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Diego Leonardo Garrido Soriano</span>
+                  <span class="committee-member-role">Evaluación y Control</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gem 2: Diamante -->
+    <div class="gem-card gem-diamante reveal reveal-delay-1">
+      <div class="gem-card-header">
+        <div class="gem-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        </div>
+        <div class="gem-card-meta">
+          <span class="gem-card-tag">Diamante</span>
+          <h3 class="gem-card-title">Innovación</h3>
+        </div>
+      </div>
+      <p class="gem-card-desc">Simboliza excelencia, resiliencia y visión. Aborda la protección de ideas, la cooperación económica y la tecnología del futuro.</p>
+      
+      <div class="gem-committees">
+        <!-- Committee: OMPI -->
+        <div class="committee-accordion">
+          <div class="committee-header">
+            <span>OMPI</span>
+            <span class="committee-arrow">▼</span>
+          </div>
+          <div class="committee-body">
+            <div class="committee-content">
+              <div class="committee-topic">
+                <span class="committee-label">Comisión</span>
+                <span class="committee-topic-text">Organización Mundial de la Propiedad Intelectual</span>
+              </div>
+              <div class="committee-topic">
+                <span class="committee-label">Tema de Debate</span>
+                <span class="committee-topic-text">Reconocimiento legal de obras creadas por inteligencia artificial en la industria cultural global.</span>
+              </div>
+              <div class="committee-team">
+                <span class="committee-label">Mesa Directiva</span>
+                <div class="committee-member">
+                  <span class="committee-member-name">Junior Roque</span>
+                  <span class="committee-member-role">Director General</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Georgina Ramírez Pérez</span>
+                  <span class="committee-member-role">Directora Adjunta</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Ashly Massiel Goris Peguero</span>
+                  <span class="committee-member-role">Evaluación y Control</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Committee: OMC -->
+        <div class="committee-accordion">
+          <div class="committee-header">
+            <span>OMC</span>
+            <span class="committee-arrow">▼</span>
+          </div>
+          <div class="committee-body">
+            <div class="committee-content">
+              <div class="committee-topic">
+                <span class="committee-label">Comisión</span>
+                <span class="committee-topic-text">Organización Mundial del Comercio</span>
+              </div>
+              <div class="committee-topic">
+                <span class="committee-label">Tema de Debate</span>
+                <span class="committee-topic-text">Revisión de subsidios agrícolas en países del norte global y su impacto en economías del sur.</span>
+              </div>
+              <div class="committee-team">
+                <span class="committee-label">Mesa Directiva</span>
+                <div class="committee-member">
+                  <span class="committee-member-name">Youlin Jimenez</span>
+                  <span class="committee-member-role">Director General</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Ángel Emilio Garrido</span>
+                  <span class="committee-member-role">Director Adjunto</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Juan Pablo Ortíz</span>
+                  <span class="committee-member-role">Director Adjunto</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Germayory Mariel Marrero</span>
+                  <span class="committee-member-role">Evaluación y Control</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gem 3: Esmeralda -->
+    <div class="gem-card gem-esmeralda reveal reveal-delay-2">
+      <div class="gem-card-header">
+        <div class="gem-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+        </div>
+        <div class="gem-card-meta">
+          <span class="gem-card-tag">Esmeralda</span>
+          <h3 class="gem-card-title">Bienestar</h3>
+        </div>
+      </div>
+      <p class="gem-card-desc">Asociada con el equilibrio, la renovación y el desarrollo sostenible. Orientada al progreso social, la equidad y los derechos socioeconómicos.</p>
+      
+      <div class="gem-committees">
+        <!-- Committee: ECOSOC -->
+        <div class="committee-accordion">
+          <div class="committee-header">
+            <span>ECOSOC (31 Delegaciones)</span>
+            <span class="committee-arrow">▼</span>
+          </div>
+          <div class="committee-body">
+            <div class="committee-content">
+              <div class="committee-topic">
+                <span class="committee-label">Comisión</span>
+                <span class="committee-topic-text">Consejo Económico y Social de las Naciones Unidas</span>
+              </div>
+              <div class="committee-topic">
+                <span class="committee-label">Tema de Debate</span>
+                <span class="committee-topic-text">Establecimiento de un impuesto global a las grandes fortunas como mecanismo de redistribución internacional.</span>
+              </div>
+              <div class="committee-team">
+                <span class="committee-label">Mesa Directiva</span>
+                <div class="committee-member">
+                  <span class="committee-member-name">Alexia Bijou Pilier</span>
+                  <span class="committee-member-role">Directora General</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Evans Nahaliel Santana</span>
+                  <span class="committee-member-role">Director Adjunto</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Emmaily Nuñez</span>
+                  <span class="committee-member-role">Evaluación y Control</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gem 4: Rubí -->
+    <div class="gem-card gem-rubi reveal reveal-delay-3">
+      <div class="gem-card-header">
+        <div class="gem-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div class="gem-card-meta">
+          <span class="gem-card-tag">Rubí</span>
+          <h3 class="gem-card-title">Estabilidad</h3>
+        </div>
+      </div>
+      <p class="gem-card-desc">Simboliza la intensidad, fortaleza y determinación. Enfocado en salvaguardar el orden, mantener la paz y proteger los derechos fundamentales.</p>
+      
+      <div class="gem-committees">
+        <!-- Committee: Viena 1815 -->
+        <div class="committee-accordion">
+          <div class="committee-header">
+            <span>CONGRESO DE VIENA 1815</span>
+            <span class="committee-arrow">▼</span>
+          </div>
+          <div class="committee-body">
+            <div class="committee-content">
+              <div class="committee-topic">
+                <span class="committee-label">Comisión Histórica</span>
+                <span class="committee-topic-text">Congreso de Viena (1815)</span>
+              </div>
+              <div class="committee-topic">
+                <span class="committee-label">Tema de Debate</span>
+                <span class="committee-topic-text">Reconfiguración del orden mundial post napoleónico y el nacimiento del equilibrio de poder europeo.</span>
+              </div>
+              <div class="committee-team">
+                <span class="committee-label">Mesa Directiva</span>
+                <div class="committee-member">
+                  <span class="committee-member-name">Hamlet José Roa</span>
+                  <span class="committee-member-role">Canciller</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Néstor Enrique Mota</span>
+                  <span class="committee-member-role">Secretario Diplomático</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Elinton Darío Rosario</span>
+                  <span class="committee-member-role">Secretario Diplomático</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Daufry Jesús De Los Santos</span>
+                  <span class="committee-member-role">Oficial de Protocolo y Evaluación</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Committee: CIDH -->
+        <div class="committee-accordion">
+          <div class="committee-header">
+            <span>CIDH</span>
+            <span class="committee-arrow">▼</span>
+          </div>
+          <div class="committee-body">
+            <div class="committee-content">
+              <div class="committee-topic">
+                <span class="committee-label">Comisión</span>
+                <span class="committee-topic-text">Comisión Interamericana de Derechos Humanos</span>
+              </div>
+              <div class="committee-topic">
+                <span class="committee-label">Tema de Debate</span>
+                <span class="committee-topic-text">Criminalización de la protesta social y restricción de libertades civiles en contextos de autoritarismo emergente.</span>
+              </div>
+              <div class="committee-team">
+                <span class="committee-label">Mesa Directiva</span>
+                <div class="committee-member">
+                  <span class="committee-member-name">Juan Trinidad</span>
+                  <span class="committee-member-role">Director General</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Jesly Castillo Puente</span>
+                  <span class="committee-member-role">Directora Adjunta</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Jasuer Alberto Ortíz</span>
+                  <span class="committee-member-role">Director Adjunto</span>
+                </div>
+                <div class="committee-member">
+                  <span class="committee-member-name">Darwin Cuevas</span>
+                  <span class="committee-member-role">Evaluación y Control</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NUESTRO EQUIPO ORGANIZADOR ═══ -->
+<section id="equipo">
+  <div class="equipo-header">
+    <div class="section-label">Detrás de Escena</div>
+    <h2 class="section-title reveal">Nuestro <span>Equipo</span></h2>
+    <p class="section-desc reveal reveal-delay-1">Las personas comprometidas que lideran los comités de redacción, gestión académica, capacitaciones, bienestar, eventos y logística integral.</p>
+  </div>
+
+  <!-- Tabs controls -->
+  <div class="equipo-tabs reveal">
+    <button class="tab-btn active" data-target="panel-academico">Comité Académico</button>
+    <button class="tab-btn" data-target="panel-logistico">Comité Logístico</button>
+  </div>
+
+  <!-- Tab Panels -->
+  <!-- 1. Académico -->
+  <div class="tab-panel active" id="panel-academico">
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-member-name">Jose Anibal</div>
+        <div class="team-member-role">Coordinador de Redacción</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Bielka C. Álvarez</div>
+        <div class="team-member-role">Subsecretaria de Redacción</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Chantal Molina</div>
+        <div class="team-member-role">Subsecretaria de Redacción</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Jia Jian Wu</div>
+        <div class="team-member-role">Coordinadora de Gestión Académica</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Yaniel Martinez</div>
+        <div class="team-member-role">Subsecretario de Gestión Académica</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Steven Gutiérrez</div>
+        <div class="team-member-role">Subsecretario de Capacitaciones</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Kervin E. Diaz</div>
+        <div class="team-member-role">Coordinador de Crisis</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Rufiorys Candelario</div>
+        <div class="team-member-role">Subsecretaria de Crisis</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Logístico -->
+  <div class="tab-panel" id="panel-logistico">
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-member-name">Pedro Santana</div>
+        <div class="team-member-role">Subsecretaría de Bienestar</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Fernando Samuel</div>
+        <div class="team-member-role">Subsecretaría de Bienestar</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Jeily Alvarez</div>
+        <div class="team-member-role">Coordinación de Acreditación</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Dahiana Caraballo</div>
+        <div class="team-member-role">Coordinación de Acreditación</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Dustin Aguirre</div>
+        <div class="team-member-role">Subsecretaría de Eventos</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Rikermin Cedeño</div>
+        <div class="team-member-role">Subsecretario de Evaluación y Control de Calidad</div>
+      </div>
+      <div class="team-card">
+        <div class="team-member-name">Logística Operativa</div>
+        <div class="team-member-role">Subsecretaría de Asistencia y Seguridad</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -458,36 +918,67 @@
     <div class="regional-info reveal">
       <div class="section-label">Nuestra identidad</div>
       <h2 class="section-title">Regional <span>12</span></h2>
-      <p class="section-desc">La Regional 12 es tierra de fe, cultura y jóvenes con visión. Sede de la Basílica de Nuestra Señora de Altagracia, cuna espiritual de la República Dominicana y símbolo de nuestra identidad como nación.</p>
+      <p class="section-desc">Salvaleón de Higüey, municipio cabecera de la provincia La Altagracia y sede de la Regional 12 del Ministerio de Educación, es una ciudad donde convergen historia, cultura y fe. Esta capital espiritual es el escenario ideal para el diálogo, la cooperación y la construcción de soluciones por parte de jóvenes líderes.</p>
+      
       <div class="info-list">
         <div class="info-item">
           <div class="info-dot"></div>
           <div>
             <div class="info-label">Evento</div>
-            <div class="info-value">Modelo Regional de las Naciones Unidas</div>
+            <div class="info-value">Modelo Regional de las Naciones Unidas (MR2026)</div>
           </div>
         </div>
         <div class="info-item">
           <div class="info-dot"></div>
           <div>
-            <div class="info-label">Regional</div>
-            <div class="info-value">Regional 12 de Educación, Higüey.</div>
+            <div class="info-label">Sede de celebración</div>
+            <div class="info-value">Universidad Autónoma de Santo Domingo (UASD), Recinto Higüey</div>
           </div>
         </div>
         <div class="info-item">
           <div class="info-dot"></div>
           <div>
-            <div class="info-label">Lema</div>
-            <div class="info-value">“Voces Jóvenes, Soluciones Globales”</div>
+            <div class="info-label">Institución Organizadora</div>
+            <div class="info-value">Programa de Liderazgo Educativo (PLE-RD) del MINERD</div>
           </div>
         </div>
       </div>
+
+      <!-- Estadísticas del Evento -->
+      <div class="regional-stats-grid">
+        <div class="regional-stat-card">
+          <div class="regional-stat-num">XVIII</div>
+          <div class="regional-stat-label">Edición / Período</div>
+        </div>
+        <div class="regional-stat-card">
+          <div class="regional-stat-num">200<span>+</span></div>
+          <div class="regional-stat-label">Delegados</div>
+        </div>
+        <div class="regional-stat-card">
+          <div class="regional-stat-num">50</div>
+          <div class="regional-stat-label">Voluntarios</div>
+        </div>
+        <div class="regional-stat-card">
+          <div class="regional-stat-num">7</div>
+          <div class="regional-stat-label">Comisiones</div>
+        </div>
+        <div class="regional-stat-card" style="grid-column: span 2;">
+          <div class="regional-stat-num">20 - 28 <span>Junio</span></div>
+          <div class="regional-stat-label">Período de Sesiones</div>
+        </div>
+      </div>
     </div>
+
     <div class="regional-visual reveal reveal-delay-2">
       <div class="regional-img">
         <img src="MULTIMEDIA/IMG_7366.webp" alt="Celider 12">
       </div>
       <div class="regional-caption">Celider 12</div>
+
+      <div class="regional-section-desc-extra">
+        <p><strong>UASD Recinto Higüey:</strong> Extiende en la región Este el legado de la Primada de América. Un espacio donde convergen conocimiento, juventud y vocación de servicio, ideal para celebrar la Edición 2026.</p>
+        <p>Celebrar el Modelo Regional en este recinto representa la unión entre historia y futuro: un encuentro donde la palabra se convierte en puente y la educación en motor de cambio.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -537,6 +1028,61 @@
   </div>
   <div class="sub-footer-region">
     MR 2026 · REPÚBLICA DOMINICANA
+  </div>
+</div>
+
+<!-- ═══ MODAL: CARTA DE BIENVENIDA ═══ -->
+<div class="hud-modal" id="welcomeModal">
+  <div class="hud-modal-inner">
+    <button class="hud-modal-close" id="closeWelcomeBtn">&times;</button>
+    <h3 class="welcome-modal-title">Carta de Bienvenida</h3>
+    <div class="welcome-modal-subtitle">MR2026 R12 · Equipo Organizador</div>
+    <div class="welcome-scrollable">
+      <p>Cuando la juventud decide involucrarse, cuestionar y construir, las transformaciones dejan de parecer lejanas. Este año, más de <strong>200 jóvenes</strong> provenientes de distintos centros educativos de la Regional 12 se reúnen impulsados por una misma convicción: la de pensar un mundo distinto y asumir un rol activo dentro de él.</p>
+      <p>Hoy les damos la bienvenida a un espacio que, durante años, se ha convertido en punto de encuentro para estudiantes que entienden que el liderazgo nace de la iniciativa, de la preparación y de la voluntad de generar impacto. Un modelo que ha visto crecer generaciones de jóvenes capaces de convertir ideas en propuestas y perspectivas en acciones con propósito.</p>
+      <p>La Regional 12 de Educación reafirma, una vez más, su compromiso con la formación de ciudadanos críticos, conscientes y comprometidos con su entorno. Porque creemos firmemente que el futuro se construye desde las aulas, las conversaciones y las iniciativas impulsadas por jóvenes como ustedes.</p>
+      <p>El MR2026 de la R12 llega acompañado de expectativas, desafíos y nuevas oportunidades, pero sobre todo llega con certeza. La certeza de que cada participante posee una voz valiosa, una visión distinta y el potencial de aportar soluciones necesarias para los retos que enfrenta nuestra sociedad. Este es el espacio para desarrollar ideas, fortalecer habilidades y descubrir el alcance que puede tener una generación cuando se le brinda la oportunidad de participar.</p>
+      <p>Queremos invitarlos a vivir este proceso con intención y compromiso. Que aprovechen cada sesión, cada intercambio y cada experiencia como una oportunidad para crecer, aprender y dejar huella. Porque las voces jóvenes no solo merecen ser escuchadas: merecen formar parte de las decisiones y soluciones que darán forma al mundo que estamos construyendo.</p>
+      <p>Bienvenidos a su modelo.</p>
+      <div class="welcome-signature">
+        <div class="valediction">Con profundo entusiasmo,</div>
+        <div class="team">Equipo Organizador MR2026 R12</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL: PERFIL DE SECRETARÍA ═══ -->
+<div class="hud-modal" id="profileModal">
+  <div class="hud-modal-inner profile-modal-inner">
+    <button class="hud-modal-close" id="closeProfileBtn">&times;</button>
+    <div class="profile-layout">
+      <div class="profile-sidebar">
+        <div class="profile-image-wrap">
+          <img src="" id="profileImg" alt="Foto Perfil">
+        </div>
+        <div>
+          <h3 class="profile-name" id="profileName">Nombre</h3>
+          <span class="profile-role-badge" id="profileRole">Rol</span>
+        </div>
+      </div>
+      <div class="profile-main">
+        <div class="profile-nav-tabs">
+          <button class="profile-tab-link active" data-tab="tab-bio">Biografía</button>
+          <button class="profile-tab-link" data-tab="tab-funciones">Funciones</button>
+          <button class="profile-tab-link" data-tab="tab-expectativas">Expectativas</button>
+        </div>
+        <div class="profile-tab-content active" id="tab-bio">
+          <!-- Bio content -->
+        </div>
+        <div class="profile-tab-content" id="tab-funciones">
+          <!-- Functions content -->
+        </div>
+        <div class="profile-tab-content" id="tab-expectativas">
+          <!-- Expectations content -->
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
