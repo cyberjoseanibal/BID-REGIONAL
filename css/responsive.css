@@ -154,7 +154,7 @@
     aspect-ratio: 3/4;
   }
   #propuesta { padding-top: 40px !important; }
-  .propuesta-img-wrap { max-width: 280px; }
+  .propuesta-img-wrap { max-width: 280px; margin: 0 auto; }
   .info-item { padding: 12px; }
   .regional-img { margin-top: 16px; }
   .secretaria-header,
